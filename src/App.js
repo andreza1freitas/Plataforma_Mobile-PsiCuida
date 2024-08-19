@@ -19,6 +19,7 @@ import SessaoVirtual from './pages/SessaoVirtual';
 import Logout from './pages/Logout';
 import AuthRedirect from './components/AuthRedirect';
 import { login, logout} from './redux/userSlice';
+import Ansioso from './pages/Ansioso';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/configuracao" element={<Configuracao />} />
             <Route path="/suporte" element={<Suporte />} />
             <Route path="/logout" element={<LogoutComponent />} />
+            <Route path="/ansioso" element={<Ansioso />} />
           </Route>
 
           {/* Redirecionamento de Rotas Desconhecidas */}

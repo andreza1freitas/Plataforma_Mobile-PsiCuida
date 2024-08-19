@@ -19,7 +19,7 @@ const Menu = ({ onLogout }) => {
 
   const titles = {
     '/dashboard': 'PsiCuida',
-    '/agendamento-sessao': 'Agendamento de Sessão',
+    '/agendamento-sessao': 'Agendar Sessão Virtual',
     '/auto-ajuda': 'Autoajuda',
     '/comunidade': 'Comunidade de Apoio',
     '/configuracao': 'Configurações',
@@ -27,6 +27,7 @@ const Menu = ({ onLogout }) => {
     '/diario': 'Diário',
     '/sessao-virtual': 'Sessões Virtuais',
     '/suporte': 'Suporte Urgência',
+    '/ansioso': 'Ansioso(a)',
     '/logout': 'Sair',
   };
 

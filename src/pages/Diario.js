@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Container, TextField, Button, Typography, MenuItem, Snackbar, Alert, FormControl } from '@mui/material';
+import { Container, TextField, Button, Typography, MenuItem, Snackbar, Alert, FormControl, Box } from '@mui/material';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { useNavigate } from 'react-router-dom';
 import format from 'date-fns/format';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'; 
-import { useSelector } from 'react-redux'; 
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { useSelector } from 'react-redux';
 
 const Diario = () => {
 
     const apiUrl = process.env.REACT_APP_API_BASE_URL;
-    
+
     const [formData, setFormData] = useState({
         sentimento: '',
         fezBem: '',
@@ -18,7 +18,7 @@ const Diario = () => {
     });
     const [data, setData] = useState(new Date());
     const [openSnackbar, setOpenSnackbar] = useState(false);
-    const [diarioId, setDiarioId] = useState(null); 
+    const [diarioId, setDiarioId] = useState(null);
     const navigate = useNavigate();
 
     const userId = useSelector((state) => state.user.userId); // Recupera o ID do usuário logado
@@ -46,7 +46,7 @@ const Diario = () => {
                     licoesAprendidas: ''
                 });
                 // Reseta o ID se não houver diário
-                setDiarioId(null); 
+                setDiarioId(null);
             }
         };
 
@@ -65,12 +65,12 @@ const Diario = () => {
         e.preventDefault();
         const requestData = {
             ...formData,
-            data: format(data, 'yyyy-MM-dd'),            
-            pacienteId: userId 
+            data: format(data, 'yyyy-MM-dd'),
+            pacienteId: userId
         };
 
         // Se existir diarioId, usa PUT, caso contrário, usa POST
-        const method = diarioId ? 'PUT' : 'POST'; 
+        const method = diarioId ? 'PUT' : 'POST';
         const url = diarioId
             ? `${apiUrl}/diarios/${diarioId}`
             : `${apiUrl}/diarios`;
@@ -109,7 +109,7 @@ const Diario = () => {
                         value={data}
                         onChange={(newValue) => setData(newValue)}
                         renderInput={(params) => <TextField {...params} fullWidth margin="normal" />}
-                        openTo="day" 
+                        openTo="day"
                         disableFuture
                         allowKeyboardControl
                     />
@@ -178,6 +178,13 @@ const Diario = () => {
                         Registro salvo com sucesso!
                     </Alert>
                 </Snackbar>
+
+                {/* Footer */}
+                <Box mt={8} textAlign="center">
+                    <Typography variant="body2" color="textSecondary">
+                        PsiCuida
+                    </Typography>
+                </Box>
             </Container>
         </LocalizationProvider>
     );

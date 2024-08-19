@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Stack, Button } from '@mui/material';
+import { Container, Stack, Button, Box, Typography } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -11,9 +11,10 @@ const Configuracao = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'flex-start',
+                justifyContent: 'space-between',
                 minHeight: '100vh',
-                paddingTop: '100px'
+                paddingTop: '100px',
+                paddingBottom: '20px'
             }}
         >
             <Stack spacing={5} style={{ width: '100%' }}>
@@ -43,6 +44,13 @@ const Configuracao = () => {
                     Excluir Conta
                 </Button>
             </Stack>
+
+            {/* Footer */}
+            <Box textAlign="center">
+                <Typography variant="body2" color="textSecondary">
+                    PsiCuida
+                </Typography>
+            </Box>
         </Container>
     );
 }

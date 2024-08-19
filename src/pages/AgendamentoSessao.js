@@ -26,7 +26,7 @@ const AgendamentoSessao = () => {
   const [observacao, setObservacao] = useState('');
   const [agendamentoId, setAgendamentoId] = useState(null);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const [snackbarErrorOpen, setSnackbarErrorOpen] = useState(false); 
+  const [snackbarErrorOpen, setSnackbarErrorOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [dialogOpen, setDialogOpen] = useState(false);
   const [agendamentoToDelete, setAgendamentoToDelete] = useState(null);
@@ -106,13 +106,13 @@ const AgendamentoSessao = () => {
         const data = await response.json();
         const msg = agendamentoId ? 'Agendamento atualizado com sucesso' : 'Agendamento realizado com sucesso';
         setSnackbarMessage(msg);
-        setSnackbarOpen(true); 
+        setSnackbarOpen(true);
         console.log('Agendamento realizado/atualizado com sucesso', data);
         fetchAgendamentos();
         clearForm();
       } else if (response.status === 204) {
         setSnackbarMessage('Agendamento já existente para este horário e profissional');
-        setSnackbarErrorOpen(true); 
+        setSnackbarErrorOpen(true);
       } else {
         console.error('Erro ao realizar/atualizar agendamento:', response.statusText);
       }
@@ -131,7 +131,7 @@ const AgendamentoSessao = () => {
         console.log('Agendamento excluído com sucesso');
         setSnackbarMessage('Agendamento excluído com sucesso');
         // Abre o Snackbar
-        setSnackbarOpen(true); 
+        setSnackbarOpen(true);
         fetchAgendamentos();
         handleCloseConfirmDialog();
       } else {
@@ -353,7 +353,7 @@ const AgendamentoSessao = () => {
         open={snackbarOpen}
         autoHideDuration={2000}
         onClose={handleCloseSnackbar}
-        anchorOrigin={{ vertical: 'top', horizontal: 'center' }} 
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
       >
         <Alert onClose={handleCloseSnackbar} severity="success" sx={{ width: '100%' }}>
           {snackbarMessage}
@@ -394,6 +394,13 @@ const AgendamentoSessao = () => {
           </Button>
         </DialogActions>
       </Dialog>
+
+      {/* Footer */}
+      <Box mt={8} textAlign="center">
+        <Typography variant="body2" color="textSecondary">
+          PsiCuida
+        </Typography>
+      </Box>
     </Container>
   );
 };

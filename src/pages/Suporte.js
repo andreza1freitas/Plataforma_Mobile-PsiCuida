@@ -7,7 +7,7 @@ const Suporte = () => {
         <Container
             style={{
                 display: 'flex',
-                flexDirection: 'column',              
+                flexDirection: 'column',
                 justifyContent: 'flex-start',
                 minHeight: '100vh',
                 padding: '20px',
@@ -31,9 +31,9 @@ const Suporte = () => {
 
             <Grid container direction="column" spacing={3} style={{ padding: '20px', marginBottom: '40px' }}>
                 <Grid item>
-                    <Button 
-                        variant="contained" 
-                        color="error" 
+                    <Button
+                        variant="contained"
+                        color="error"
                         fullWidth
                         style={{ textTransform: 'none', fontSize: '18px', height: '50px' }}
                     >
@@ -42,9 +42,9 @@ const Suporte = () => {
                 </Grid>
 
                 <Grid item>
-                    <Button 
-                        variant="contained" 
-                        color="primary" 
+                    <Button
+                        variant="contained"
+                        color="primary"
                         fullWidth
                         style={{ textTransform: 'none', fontSize: '18px', height: '50px' }}
                     >
@@ -60,7 +60,7 @@ const Suporte = () => {
             >
                 Você também pode encontrar ajuda nos seguintes recursos:
             </Typography>
-            
+
             <Box
                 style={{
                     display: 'flex',
@@ -103,6 +103,13 @@ const Suporte = () => {
                         </Link>
                     </ListItem>
                 </List>
+            </Box>
+
+            {/* Footer */}
+            <Box mt={8} textAlign="center">
+                <Typography variant="body2" color="textSecondary">
+                    PsiCuida
+                </Typography>
             </Box>
         </Container>
     );
