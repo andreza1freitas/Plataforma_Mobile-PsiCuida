@@ -3,8 +3,15 @@ import { Container, Stack, Button, Box, Typography } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useNavigate } from 'react-router-dom';
 
 const Configuracao = () => {
+    const navigate = useNavigate();
+
+    const handleEditProfile = () => {
+        navigate('/editar-perfil');
+    };
+
     return (
         <Container
             style={{
@@ -23,6 +30,7 @@ const Configuracao = () => {
                     fullWidth
                     style={{ backgroundColor: '#003366', textTransform: 'none', fontSize: '17px' }}
                     startIcon={<EditIcon />}
+                    onClick={handleEditProfile}
                 >
                     Editar Perfil
                 </Button>

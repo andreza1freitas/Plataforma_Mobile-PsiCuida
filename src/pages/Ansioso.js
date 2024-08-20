@@ -1,9 +1,33 @@
 import React from 'react';
-import { Container, Typography, Box } from '@mui/material';
+import { Container, Typography, Box, IconButton } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Ansioso = () => {
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate('/dashboard');
+  };
+
   return (
     <>
+      <div style={{
+        width: '100%',
+        backgroundColor: '#003366',
+        color: 'white',
+        height: '60px',
+        display: 'flex',
+        alignItems: 'center',
+      }}>
+        <IconButton onClick={handleBack} style={{ color: 'white' }}>
+          <ArrowBackIcon />
+        </IconButton>
+        <Typography variant="h5" align="center" style={{ flexGrow: 1, textAlign: 'center', paddingRight: '7%' }}>
+          Ansioso(a)
+        </Typography>
+      </div>
+
       <Container maxWidth="md" sx={{ marginTop: '20px' }}>
         <Typography variant="body1" align="center" paragraph sx={{ fontSize: '15px' }}>
           Respire fundo. Viva o momento. A ansiedade pode ser algo difícil de lidar,
@@ -64,7 +88,7 @@ const Ansioso = () => {
             Se dormir durante o áudio, procure fazê-lo sentado(a).<br></br>
             <strong>Para melhores resultados, ouça com fones de ouvido.</strong>
           </Typography>
-          
+
           {/* vídeo do YouTube */}
           <iframe
             width="320"

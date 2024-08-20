@@ -84,9 +84,6 @@ const Diario = () => {
         }).then(response => {
             if (response.ok) {
                 setOpenSnackbar(true);
-                setTimeout(() => {
-                    navigate('/dashboard');
-                }, 2000);
             }
         });
     };

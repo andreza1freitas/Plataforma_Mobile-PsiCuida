@@ -20,6 +20,7 @@ import Logout from './pages/Logout';
 import AuthRedirect from './components/AuthRedirect';
 import { login, logout} from './redux/userSlice';
 import Ansioso from './pages/Ansioso';
+import EditarPerfil from './pages/EditarPerfil';
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginComponent />} /> {/* Usando LoginComponent */}
           <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/editar-perfil" element={<EditarPerfil />} />
+          <Route path="/ansioso" element={<Ansioso />} /> 
 
           {/* Rotas Privadas */}
           <Route element={<PrivateRoutes />}>
@@ -42,12 +45,12 @@ function App() {
             <Route path="/sessao-virtual" element={<SessaoVirtual />} />
             <Route path="/configuracao" element={<Configuracao />} />
             <Route path="/suporte" element={<Suporte />} />
-            <Route path="/logout" element={<LogoutComponent />} />
-            <Route path="/ansioso" element={<Ansioso />} />
+            <Route path="/logout" element={<LogoutComponent />} />               
           </Route>
+          
 
           {/* Redirecionamento de Rotas Desconhecidas */}
-          <Route path="*" element={<AuthRedirect />} />
+          <Route path="*" element={<AuthRedirect />} />        
         </Routes>
       </Router>
     </Provider>
