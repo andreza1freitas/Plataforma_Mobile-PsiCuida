@@ -54,7 +54,7 @@ const Configuracao = () => {
             </Stack>
 
             {/* Footer */}
-            <Box textAlign="center">
+            <Box mt={8} textAlign="center">
                 <Typography variant="body2" color="textSecondary">
                     PsiCuida
                 </Typography>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, Container, Typography, MenuItem, Select, InputLabel, FormControl, IconButton, InputAdornment, Stack, Snackbar, Alert } from '@mui/material';
+import { Button, TextField, Container, Typography, MenuItem, Select, InputLabel, FormControl, IconButton, InputAdornment, Stack, Snackbar, Alert, Box } from '@mui/material';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -103,30 +103,31 @@ const Cadastro = () => {
 
     return (
         <>
-            <div style={{
-                width: '100%',
-                backgroundColor: '#003366',
-                color: 'white',
-                height: '60px',
-                display: 'flex',
-                alignItems: 'center',
-            }}>
-                <IconButton onClick={handleBack} style={{ color: 'white' }}>
+            <Box
+                sx={{
+                    width: '100%',
+                    backgroundColor: '#003366',
+                    color: 'white',
+                    height: '60px',
+                    display: 'flex',
+                    alignItems: 'center',
+                }}>
+                <IconButton onClick={handleBack} sx={{ color: 'white' }}>
                     <ArrowBackIcon />
                 </IconButton>
-                <Typography variant="h6" align="center" style={{ flexGrow: 1, textAlign: 'center', paddingRight: '7%' }}>
+                <Typography variant="h5" align="center" sx={{ flexGrow: 1, textAlign: 'center', paddingRight: '7%', fontSize: '30px', fontFamily: 'Saturday' }}>
                     Cadastro
                 </Typography>
-            </div>
+            </Box>
 
             <Container
                 maxWidth="xl"
-                style={{
+                sx={{
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginTop: '24px', 
+                    marginTop: '24px',
                 }}
             >
                 <form onSubmit={handleSubmit}>
@@ -180,7 +181,7 @@ const Cadastro = () => {
                                     format="DD/MM/YYYY"
                                     textField={(params) => <TextField {...params} fullWidth required />}
                                     disableFuture
-                                    inputFormat="DD/MM/YYYY" 
+                                    inputFormat="DD/MM/YYYY"
                                     allowKeyboardControl
                                 />
                             </Stack>
@@ -262,7 +263,7 @@ const Cadastro = () => {
                         type="submit"
                         variant="contained"
                         fullWidth
-                        style={{ textTransform: 'none', marginTop: '16px', backgroundColor: '#003366', color: 'white', fontSize: '17px' }}
+                        sx={{ textTransform: 'none', marginTop: '16px', backgroundColor: '#003366', color: 'white', fontSize: '17px' }}
                     >
                         Cadastrar
                     </Button>

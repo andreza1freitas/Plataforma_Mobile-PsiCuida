@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, IconButton } from '@mui/material';
+import { Container, Typography, Box, IconButton, Link } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
@@ -23,7 +23,7 @@ const Ansioso = () => {
         <IconButton onClick={handleBack} style={{ color: 'white' }}>
           <ArrowBackIcon />
         </IconButton>
-        <Typography variant="h5" align="center" style={{ flexGrow: 1, textAlign: 'center', paddingRight: '7%' }}>
+        <Typography variant="h5" align="center" style={{ flexGrow: 1, textAlign: 'center', paddingTop: '8px', fontSize: '33px', fontFamily:'Saturday' }}>
           Ansioso(a)
         </Typography>
       </div>
@@ -55,7 +55,14 @@ const Ansioso = () => {
             align="center"
             sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
           >
-            OUÇA QUANDO ESTIVER NUMA CRISE DE ANSIEDADE
+            <Link
+              href="https://www.youtube.com/embed/AMu9YYKB3YU"
+              target="_blank"
+              rel="noopener noreferrer"
+              underline="always"
+            >
+              OUÇA QUANDO ESTIVER NUMA CRISE DE ANSIEDADE
+            </Link>
           </Typography>
 
           <Typography
@@ -73,8 +80,8 @@ const Ansioso = () => {
             sx={{ fontSize: '15px', marginTop: '10px' }}
           >
             Para promover mudanças tranquilizadoras na sua mente subconsciente através do Recondicionamento da mente
-            pelo Relaxamento (RMR).
-            Com o RMR, além de você experimentar um relaxamento profundo, a sua mente se tornará mais
+            pelo Relaxamento <strong>(RMR)</strong>.<br></br>
+            Com o <strong>RMR</strong>, além de você experimentar um relaxamento profundo, a sua mente se tornará mais
             permeável para que a mudança se torne mais fácil e natural.
           </Typography>
 
@@ -84,7 +91,7 @@ const Ansioso = () => {
             paragraph
             sx={{ fontSize: '15px', marginTop: '10px' }}
           >
-            O RMR pode ser usado a qualquer momento, mas note que o vídeo dura 10 minutos. Reserve o tempo necessário.
+            O <strong>RMR</strong> pode ser usado a qualquer momento, mas note que o vídeo dura 10 minutos. Reserve o tempo necessário.
             Se dormir durante o áudio, procure fazê-lo sentado(a).<br></br>
             <strong>Para melhores resultados, ouça com fones de ouvido.</strong>
           </Typography>
@@ -105,7 +112,14 @@ const Ansioso = () => {
             align="center"
             sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
           >
-            MINDFULNESS: ANSIEDADE ZERO (MEDITAÇÃO GUIADA)
+            <Link
+              href="https://www.youtube.com/embed/1fYt92gSJ_U"
+              target="_blank"
+              rel="noopener noreferrer"
+              underline="always"
+            >
+              MINDFULNESS: ANSIEDADE ZERO (MEDITAÇÃO GUIADA)
+            </Link>
           </Typography>
         </Box>
 

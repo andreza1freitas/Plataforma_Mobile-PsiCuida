@@ -80,6 +80,20 @@ const AgendamentoSessao = () => {
   const handleAgendar = async () => {
     const dataHora = dayjs(`${dayjs(data).format('YYYY-MM-DD')}T${horario}:00`).format('YYYY-MM-DDTHH:mm:ss');
 
+    // Verifica se já existe um agendamento para o mesmo paciente na mesma data, ignorando o agendamento atual em caso de atualização
+    const dataFormatada = dayjs(data).format('YYYY-MM-DD');
+    const agendamentoExistente = agendamentos.find(
+      (agendamento) =>
+        dayjs(agendamento.dataHora).format('YYYY-MM-DD') === dataFormatada &&
+        agendamento.id !== agendamentoId
+    );
+
+    if (agendamentoExistente) {
+      setSnackbarMessage('Você já possui um agendamento nesta data.');
+      setSnackbarErrorOpen(true);
+      return;
+    }
+
     const agendamento = {
       pacienteId: userId,
       profissionalId: selectedMedico,
@@ -128,9 +142,8 @@ const AgendamentoSessao = () => {
       });
 
       if (response.ok) {
-        console.log('Agendamento excluído com sucesso');
-        setSnackbarMessage('Agendamento excluído com sucesso');
-        // Abre o Snackbar
+        console.log('Agendamento cancelado com sucesso');
+        setSnackbarMessage('Agendamento cancelado com sucesso');
         setSnackbarOpen(true);
         fetchAgendamentos();
         handleCloseConfirmDialog();

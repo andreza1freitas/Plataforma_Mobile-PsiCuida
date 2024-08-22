@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, TextField, Button, Typography, MenuItem, Snackbar, Alert, FormControl, Box } from '@mui/material';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
-import { useNavigate } from 'react-router-dom';
 import format from 'date-fns/format';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { useSelector } from 'react-redux';
@@ -19,7 +18,6 @@ const Diario = () => {
     const [data, setData] = useState(new Date());
     const [openSnackbar, setOpenSnackbar] = useState(false);
     const [diarioId, setDiarioId] = useState(null);
-    const navigate = useNavigate();
 
     const userId = useSelector((state) => state.user.userId); // Recupera o ID do usuário logado
 
@@ -95,7 +93,7 @@ const Diario = () => {
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
             <Container>
-                <Typography gutterBottom align="center" style={{ paddingTop: 30, color: '#003366', fontSize: '25px' }}>
+                <Typography gutterBottom align="center" style={{ paddingTop: 30, color: '#003366', fontSize: '33px', fontFamily:'Saturday' }}>
                     Como foi seu dia?
                 </Typography>
                 <FormControl fullWidth margin="normal" required>

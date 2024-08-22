@@ -105,7 +105,7 @@ const EditarPerfil = () => {
         };
 
         try {
-            const response = await fetch(`${apiUrl}/pacientes/${userId}`, {  
+            const response = await fetch(`${apiUrl}/pacientes/${userId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -113,13 +113,14 @@ const EditarPerfil = () => {
                 body: JSON.stringify(formDataToSubmit)
             });
 
-            if (response.ok) {
-                setSnackbarMessage('Perfil atualizado com sucesso!');
+            if (response.ok) {   
+                console.log('Perfil atualizado com sucesso!');      
+                setSnackbarMessage('Perfil atualizado com sucesso!');    
                 setSnackbarSeverity('success');
                 setSnackbarOpen(true);
 
                 setTimeout(() => {
-                    navigate('/perfil');  
+                    navigate('/perfil');
                 }, 2000);
 
             } else {
@@ -222,7 +223,7 @@ const EditarPerfil = () => {
                                     format="DD/MM/YYYY"
                                     textField={(params) => <TextField {...params} fullWidth required />}
                                     disableFuture
-                                    inputFormat="DD/MM/YYYY" 
+                                    inputFormat="DD/MM/YYYY"
                                     allowKeyboardControl
                                 />
                             </Stack>

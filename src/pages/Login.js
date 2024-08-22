@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { Button, TextField, Container, Typography, IconButton, InputAdornment } from '@mui/material';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack'; 
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 // Recebe a função onLogin como prop
-const Login = ({ onLogin }) => {  
+const Login = ({ onLogin }) => {
   const apiUrl = process.env.REACT_APP_API_BASE_URL;
-  const [credentials, setCredentials] = useState({ email: '', password: ''  });
+  const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
@@ -34,10 +34,10 @@ const Login = ({ onLogin }) => {
 
       if (response.ok) {
         const data = await response.json();
-    
+
         // Passa os dados do usuário para a função onLogin
-        onLogin({ userId: data.userId, userName: data.userName });  
-    
+        onLogin({ userId: data.userId, userName: data.userName });
+
         navigate('/dashboard');
       } else {
         console.error('Login failed');
@@ -61,34 +61,35 @@ const Login = ({ onLogin }) => {
 
   return (
     <Container component="main"
-      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
-      
+      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
+
       <IconButton
-        style={{ alignSelf: 'flex-start', position: 'absolute', top: 20, left: 20 }} 
+        sx={{ alignSelf: 'flex-start', position: 'absolute', top: 20, left: 20 }}
         onClick={handleBackToHome}
       >
         <ArrowBackIcon />
       </IconButton>
-      
-      <Typography variant="h4" component="h1" gutterBottom style={{ color: '#003366', marginBottom: '20px' }}>
+
+      <Typography variant="h3" component="h1" gutterBottom
+        sx={{ color: '#003366', marginBottom: '50px', fontFamily:'Saturday' }}>
         PsiCuida
       </Typography>
-      
-      <form onSubmit={handleSubmit} style={{ width: '100%' }}>
+
+      <form onSubmit={handleSubmit} sx={{ width: '100%' }}>
         <TextField
-        style={{ marginTop: '20px' }}
+          sx={{ marginTop: '20px' }}
           required
           fullWidth
-          name="email"  
-          label="E-mail"  
-          type="email"  
-          value={credentials.email} 
+          name="email"
+          label="E-mail"
+          type="email"
+          value={credentials.email}
           onChange={handleChange}
-          autoComplete="email"  
+          autoComplete="email"
           autoFocus
         />
         <TextField
-        style={{ marginTop: '10px' }}
+          sx={{ marginTop: '10px' }}
           required
           fullWidth
           name="password"
@@ -117,7 +118,7 @@ const Login = ({ onLogin }) => {
           fullWidth
           variant="contained"
           color="primary"
-          style={{ backgroundColor: '#003366', marginTop: '10px', textTransform: 'none', fontSize: '17px'}}   
+          sx={{ backgroundColor: '#003366', marginTop: '10px', textTransform: 'none', fontSize: '17px'}}
         >
           Login
         </Button>

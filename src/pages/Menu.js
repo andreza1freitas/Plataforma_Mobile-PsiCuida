@@ -21,13 +21,14 @@ const Menu = ({ onLogout }) => {
     '/dashboard': 'PsiCuida',
     '/agendamento-sessao': 'Agendar Sessão Virtual',
     '/auto-ajuda': 'Autoajuda',
-    '/comunidade': 'Comunidade de Apoio',
+    '/forum-apoio': 'Fórum de Apoio',
     '/configuracao': 'Configurações',
     '/conteudo-educacional': 'Conteúdo Educacional',
     '/diario': 'Diário',
     '/sessao-virtual': 'Sessões Virtuais',
     '/suporte': 'Suporte Urgência',
     '/ansioso': 'Ansioso(a)',
+    '/Insone': 'Insônia',
     '/logout': 'Sair',
   };
 
@@ -39,7 +40,7 @@ const Menu = ({ onLogout }) => {
 
   return (
     <>
-      <AppBar position="static" style={{ backgroundColor: '#003366' }} >
+      <AppBar position="static" sx={{ backgroundColor: '#003366' }} >
         <Toolbar>
           <IconButton
             edge="start"
@@ -49,12 +50,16 @@ const Menu = ({ onLogout }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" style={{
+          <Typography variant="h6" 
+          sx={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
             width: '90%',
-            fontSize: '25px'
+            fontSize: '30px',
+            paddingTop: '5px',
+            fontFamily: 'Saturday'
+            
           }}>
             {currentTitle}
           </Typography>
@@ -89,11 +94,11 @@ const Menu = ({ onLogout }) => {
               </ListItemIcon>
               <ListItemText primary="Autoajuda" />
             </ListItemButton>
-            <ListItemButton component={Link} to="/comunidade">
+            <ListItemButton component={Link} to="/forum-apoio">
               <ListItemIcon>
                 <GroupIcon />
               </ListItemIcon>
-              <ListItemText primary="Comunidade de Apoio" />
+              <ListItemText primary="Fórum de Apoio" />
             </ListItemButton>
             <ListItemButton component={Link} to="/configuracao">
               <ListItemIcon>

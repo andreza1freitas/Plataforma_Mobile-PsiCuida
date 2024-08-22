@@ -16,7 +16,7 @@ const Suporte = () => {
             <Typography
                 gutterBottom
                 align="center"
-                style={{ marginTop: '15px', marginBottom: '40px', fontSize: '35px', color: 'red' }}
+                style={{ marginTop: '15px', marginBottom: '40px', fontSize: '35px', color: 'red', fontFamily:'fantasy' }}
             >
                 Precisa de ajuda imediata?
             </Typography>

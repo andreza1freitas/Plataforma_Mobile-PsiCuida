@@ -6,46 +6,44 @@ const Home = () => {
     const navigate = useNavigate();
 
     return (
-        <Container 
-            style={{
+        <Container
+            sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
                 height: '100vh',
-                maxWidth : '100%',
+                maxWidth: '100%',
                 backgroundColor: '#003366' // cor azul escuro do projeto
             }}
-            
+
         >
             <Container maxWidth="lg">
-
-           
-            <Typography 
-                variant="h4" 
-                align="center" 
-                style={{ color: 'white', marginBottom: '80px' }}
-            >
-                PsiCuida
+                <Typography
+                    variant="h3"
+                    align="center"
+                    sx={{color: 'white',marginBottom: '80px',fontFamily: 'Saturday'}}
+                >
+                    PsiCuida
             </Typography>
-            <Button 
-                variant="contained" 
-                fullWidth 
+            <Button
+                variant="contained"
+                fullWidth
                 onClick={() => navigate('/login')}
-                style={{ textTransform: 'none', marginBottom: '16px', backgroundColor: '#1E90FF', color: 'white', fontSize: '17px' }}
+                sx={{ textTransform: 'none', marginBottom: '16px', backgroundColor: '#1E90FF', color: 'white', fontSize: '17px' }}
             >
                 Entrar
             </Button>
-            <Button 
-                variant="outlined" 
-                fullWidth 
+            <Button
+                variant="outlined"
+                fullWidth
                 onClick={() => navigate('/cadastro')}
-                style={{ textTransform: 'none', color: 'white', borderColor: 'white', fontSize: '17px' }}             
+                sx={{ textTransform: 'none', color: 'white', borderColor: 'white', fontSize: '17px' }}
             >
                 Cadastre-se
             </Button>
-            </Container>
         </Container>
+        </Container >
     );
 }
 
