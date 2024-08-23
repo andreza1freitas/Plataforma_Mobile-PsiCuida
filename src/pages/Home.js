@@ -22,27 +22,42 @@ const Home = () => {
                 <Typography
                     variant="h3"
                     align="center"
-                    sx={{color: 'white',marginBottom: '80px',fontFamily: 'Saturday'}}
+                    sx={{ color: 'white', marginBottom: '80px', fontFamily: 'Saturday' }}
                 >
                     PsiCuida
-            </Typography>
-            <Button
-                variant="contained"
-                fullWidth
-                onClick={() => navigate('/login')}
-                sx={{ textTransform: 'none', marginBottom: '16px', backgroundColor: '#1E90FF', color: 'white', fontSize: '17px' }}
-            >
-                Entrar
-            </Button>
-            <Button
-                variant="outlined"
-                fullWidth
-                onClick={() => navigate('/cadastro')}
-                sx={{ textTransform: 'none', color: 'white', borderColor: 'white', fontSize: '17px' }}
-            >
-                Cadastre-se
-            </Button>
-        </Container>
+                </Typography>
+                <Button
+                    variant="contained"
+                    fullWidth
+                    onClick={() => navigate('/login')}
+                    sx={{
+                        textTransform: 'none',
+                        marginBottom: '16px',
+                        backgroundColor: '#1E90FF',
+                        color: 'white',
+                        fontSize: '17px',
+                        width: '100%', 
+                        height: '50px' 
+                    }}
+                >
+                    Entrar
+                </Button>
+                <Button
+                    variant="outlined"
+                    fullWidth
+                    onClick={() => navigate('/cadastro')}
+                    sx={{
+                        textTransform: 'none',
+                        color: 'white',
+                        borderColor: 'white',
+                        fontSize: '17px',
+                        width: '100%', 
+                        height: '50px'
+                    }}
+                >
+                    Cadastre-se
+                </Button>
+            </Container>
         </Container >
     );
 }

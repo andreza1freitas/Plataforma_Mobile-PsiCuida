@@ -115,7 +115,7 @@ const Cadastro = () => {
                 <IconButton onClick={handleBack} sx={{ color: 'white' }}>
                     <ArrowBackIcon />
                 </IconButton>
-                <Typography variant="h5" align="center" sx={{ flexGrow: 1, textAlign: 'center', paddingRight: '7%', fontSize: '30px', fontFamily: 'Saturday' }}>
+                <Typography variant="h5" align="center" sx={{ flexGrow: 1, textAlign: 'center', paddingTop: '8px', paddingRight: '10%', fontSize: '30px', fontFamily: 'Saturday' }}>
                     Cadastro
                 </Typography>
             </Box>

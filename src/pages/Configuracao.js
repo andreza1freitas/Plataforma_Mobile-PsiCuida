@@ -55,7 +55,7 @@ const Configuracao = () => {
 
             {/* Footer */}
             <Box mt={8} textAlign="center">
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="textSecondary" sx={{fontFamily:'Saturday', marginBottom:'80px'}}>
                     PsiCuida
                 </Typography>
             </Box>

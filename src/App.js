@@ -21,7 +21,9 @@ import { login, logout} from './redux/userSlice';
 import Ansioso from './pages/Ansioso';
 import EditarPerfil from './pages/EditarPerfil';
 import Insone from './pages/Insone';
+import RespostasForum from './pages/RespostasForum';
 import './App.css';
+
 
 function App() {
   return (
@@ -30,11 +32,12 @@ function App() {
         <Routes>
           {/* Rotas Públicas */}
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<LoginComponent />} /> {/* Usando LoginComponent */}
+          <Route path="/login" element={<LoginComponent />} /> 
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/editar-perfil" element={<EditarPerfil />} />
           <Route path="/ansioso" element={<Ansioso />} /> 
           <Route path="/insone" element={<Insone />} /> 
+          <Route path="/perguntas/:id" element={<RespostasForum />} />
 
           {/* Rotas Privadas */}
           <Route element={<PrivateRoutes />}>
@@ -47,7 +50,8 @@ function App() {
             <Route path="/sessao-virtual" element={<SessaoVirtual />} />
             <Route path="/configuracao" element={<Configuracao />} />
             <Route path="/suporte" element={<Suporte />} />
-            <Route path="/logout" element={<LogoutComponent />} />               
+            <Route path="/logout" element={<LogoutComponent />} />          
+
           </Route>
           
 

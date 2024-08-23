@@ -23,7 +23,7 @@ const Ansioso = () => {
         <IconButton onClick={handleBack} style={{ color: 'white' }}>
           <ArrowBackIcon />
         </IconButton>
-        <Typography variant="h5" align="center" style={{ flexGrow: 1, textAlign: 'center', paddingTop: '8px', fontSize: '33px', fontFamily:'Saturday' }}>
+        <Typography variant="h5" align="center" style={{ flexGrow: 1, textAlign: 'center', paddingRight: '10%', paddingTop: '8px', fontSize: '33px', fontFamily:'Saturday' }}>
           Ansioso(a)
         </Typography>
       </div>
@@ -125,7 +125,7 @@ const Ansioso = () => {
 
         {/* Footer */}
         <Box mt={8} textAlign="center">
-          <Typography variant="body2" color="textSecondary">
+          <Typography variant="body2" color="textSecondary" sx={{ fontFamily: 'Saturday'}}>
             PsiCuida
           </Typography>
         </Box>

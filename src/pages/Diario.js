@@ -176,7 +176,7 @@ const Diario = () => {
 
                 {/* Footer */}
                 <Box mt={8} textAlign="center">
-                    <Typography variant="body2" color="textSecondary">
+                    <Typography variant="body2" color="textSecondary" sx={{fontFamily:'Saturday'}}>
                         PsiCuida
                     </Typography>
                 </Box>

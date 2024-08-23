@@ -27,11 +27,11 @@ const Dashboard = () => {
                 paddingTop: '20px'
             }}
         >
-            <Typography align="center" style={{ paddingTop: 30, color: '#003366', textTransform: 'none', fontSize: '33px', fontFamily:'Saturday'}}>
+            <Typography align="center" style={{ paddingTop: 30, color: '#003366', textTransform: 'none', fontSize: '33px', fontFamily: 'Saturday' }}>
                 Olá, {userName}!
             </Typography>
 
-            <Typography align="center" style={{ marginBottom: '32px', color: '#003366', textTransform: 'none', fontSize: '33px', fontFamily:'Saturday'}}>
+            <Typography align="center" style={{ marginBottom: '32px', color: '#003366', textTransform: 'none', fontSize: '33px', fontFamily: 'Saturday' }}>
                 Como você está agora?
             </Typography>
 
@@ -48,28 +48,28 @@ const Dashboard = () => {
                 fullWidth
                 sx={{ margin: '8px 0', textTransform: 'none', backgroundColor: '#64B5F6', fontSize: '17px' }}
             >
-                Culpado(a)
+                Estressado(a)
             </Button>
             <Button
                 variant="contained"
                 fullWidth
                 sx={{ margin: '8px 0', textTransform: 'none', backgroundColor: '#81C784', fontSize: '17px' }}
             >
-                Desanimado(a) e Triste
+                Triste
             </Button>
             <Button
                 variant="contained"
                 fullWidth
                 sx={{ margin: '8px 0', textTransform: 'none', backgroundColor: '#FFD54F', fontSize: '17px' }}
             >
-                Desatento(a)
+                Inseguro(a)
             </Button>
             <Button
                 variant="contained"
                 fullWidth
                 sx={{ margin: '8px 0', textTransform: 'none', backgroundColor: '#CE93D8', fontSize: '17px' }}
             >
-                Estressado(a)
+                Culpado(a)
             </Button>
             <Button
                 variant="contained"
@@ -84,9 +84,8 @@ const Dashboard = () => {
                 fullWidth
                 sx={{ margin: '8px 0', textTransform: 'none', backgroundColor: '#4DB6AC', fontSize: '17px' }}
             >
-                Inseguro(a)
+                Desatento(a)
             </Button>
-
         </Container>
     );
 }

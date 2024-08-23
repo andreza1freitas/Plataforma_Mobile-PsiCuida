@@ -300,7 +300,7 @@ const AgendamentoSessao = () => {
             variant="contained"
             fullWidth
             onClick={handleAgendar}
-            disabled={!isFormValid()} // Botão desabilitado se o formulário não for válido
+            disabled={!isFormValid()} 
             style={{ marginTop: 10, backgroundColor: !isFormValid() ? '' : '#003366', textTransform: 'none', fontSize: '17px' }}
           >
             <Typography>{agendamentoId ? 'Atualizar Agendamento' : 'Agendar'}</Typography>
@@ -388,6 +388,13 @@ const AgendamentoSessao = () => {
       <Dialog
         open={dialogOpen}
         onClose={handleCloseConfirmDialog}
+        sx={{
+          '& .MuiPaper-root': {
+            backgroundColor: '#f5f5f', 
+            borderRadius: '12px', 
+            padding: '16px',
+          }
+        }}
       >
         <DialogTitle>Confirmar Cancelamento</DialogTitle>
         <DialogContent>
@@ -410,7 +417,7 @@ const AgendamentoSessao = () => {
 
       {/* Footer */}
       <Box mt={8} textAlign="center">
-        <Typography variant="body2" color="textSecondary">
+        <Typography variant="body2" color="textSecondary" sx={{fontFamily:'Saturday'}}>
           PsiCuida
         </Typography>
       </Box>
