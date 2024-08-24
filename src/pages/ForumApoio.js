@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography, Button, List, ListItemButton, ListItemText, TextField, Dialog, DialogActions, DialogContent, DialogTitle} from '@mui/material';
+import { Container, Typography, Button, List, ListItemButton, ListItemText, TextField, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -18,16 +18,21 @@ const ForumApoio = () => {
 
     useEffect(() => {
         // Buscar perguntas da API para todos os pacientes
-        axios.get(`${apiUrl}/perguntas/listarTodos`)
-            .then(response => {
-                setPerguntas(response.data);
+        const fetchPerguntas = async () => {
+            try {
+                const response = await fetch(`${apiUrl}/perguntas/listarTodos`);
+                if (!response.ok) throw new Error('Erro ao carregar perguntas');
+                const data = await response.json();
+                setPerguntas(data);
                 setLoading(false);
-            })
-            .catch(error => {
+            } catch (error) {
                 setError('Erro ao carregar perguntas');
                 setLoading(false);
                 console.error(error);
-            });
+            }
+        };
+
+        fetchPerguntas();
     }, [pacienteId]);
 
     const handleDialogOpen = () => setOpen(true);
@@ -68,20 +73,21 @@ const ForumApoio = () => {
             <List>
                 {perguntas.map((pergunta) => (
                     <ListItemButton key={pergunta.id} onClick={() => handlePerguntaClick(pergunta.id)}>
-                        <ListItemText 
-                            primary={pergunta.titulo} 
-                            secondary={`${pergunta.respostas.length} respostas`} 
-                            sx={{ 
-                                textDecoration: 'underline', 
-                                color: '#007bff', 
-                                cursor: 'pointer' 
+                        <ListItemText
+                            primary={pergunta.titulo}
+                            secondary={`${pergunta.respostas.length} respostas`}
+                            sx={{
+                                textDecoration: 'underline',
+                                color: '#007bff',
+                                cursor: 'pointer'
                             }}
                         />
                     </ListItemButton>
                 ))}
             </List>
-            <Button variant="contained" color="primary" fullWidth onClick={handleDialogOpen}>+ Novo tópico</Button>
 
+            <Button variant="contained" color="primary" fullWidth onClick={handleDialogOpen} sx={{ marginTop: 8, backgroundColor: '#003366', textTransform: 'none', fontSize: '17px' }}>
+                + Novo tópico</Button>
             <Dialog open={open} onClose={handleDialogClose}>
                 <DialogTitle>Nova Pergunta</DialogTitle>
                 <DialogContent>
@@ -97,7 +103,7 @@ const ForumApoio = () => {
                     <TextField
                         margin="dense"
                         name="descricao"
-                        label="Descrição"
+                        label="Descrição da pergunta"
                         fullWidth
                         multiline
                         rows={4}

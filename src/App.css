@@ -6,6 +6,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Rubica'; 
+  src: url('./fonts/Rubica.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App {
   text-align: center;
 }

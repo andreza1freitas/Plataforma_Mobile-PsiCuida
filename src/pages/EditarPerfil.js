@@ -154,7 +154,7 @@ const EditarPerfil = () => {
                 <IconButton onClick={handleBack} style={{ color: 'white' }}>
                     <ArrowBackIcon />
                 </IconButton>
-                <Typography variant="h5" align="center" style={{ flexGrow: 1, textAlign: 'center', paddingRight: '7%' }}>
+                <Typography variant="h5" align="center" sx={{ flexGrow: 1, textAlign: 'center', paddingRight: '10%', paddingTop: '8px',fontSize: '31px', fontFamily:'Saturday' }}>
                     Editar Perfil
                 </Typography>
             </div>

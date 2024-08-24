@@ -5,7 +5,7 @@ const Suporte = () => {
 
     return (
         <Container
-            style={{
+            sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
@@ -16,7 +16,7 @@ const Suporte = () => {
             <Typography
                 gutterBottom
                 align="center"
-                style={{ marginTop: '15px', marginBottom: '40px', fontSize: '35px', color: 'red', fontFamily:'fantasy' }}
+                sx={{ marginTop: '15px', marginBottom: '40px', fontSize: '35px', color: 'red', fontFamily:'Rubica' }}
             >
                 Precisa de ajuda imediata?
             </Typography>
@@ -24,18 +24,18 @@ const Suporte = () => {
             <Typography
                 paragraph
                 align="center"
-                style={{ marginTop: '15px', marginBottom: '20px', fontSize: '16px', fontWeight: 'bold' }}
+                sx={{ marginBottom: '20px', fontSize: '16px', fontWeight: 'bold' }}
             >
                 Se você está em uma situação de emergência ou precisa falar com alguém agora, por favor, utilize uma das opções abaixo.
             </Typography>
 
-            <Grid container direction="column" spacing={3} style={{ padding: '20px', marginBottom: '40px' }}>
+            <Grid container direction="column" spacing={3} sx={{ padding: '20px', marginBottom: '40px' }}>
                 <Grid item>
                     <Button
                         variant="contained"
                         color="error"
                         fullWidth
-                        style={{ textTransform: 'none', fontSize: '18px', height: '50px' }}
+                        sx={{ textTransform: 'none', fontSize: '18px', height: '50px' }}
                     >
                         Ligar para o CVV (188)
                     </Button>
@@ -46,7 +46,7 @@ const Suporte = () => {
                         variant="contained"
                         color="primary"
                         fullWidth
-                        style={{ textTransform: 'none', fontSize: '18px', height: '50px' }}
+                        sx={{ textTransform: 'none', fontSize: '18px', height: '50px' }}
                     >
                         Falar com Alguém
                     </Button>
@@ -56,13 +56,13 @@ const Suporte = () => {
             <Typography
                 variant="subtitle1"
                 align="center"
-                style={{ marginBottom: '20px', fontWeight: 'bold' }}
+                sx={{ marginBottom: '20px', fontWeight: 'bold' }}
             >
                 Você também pode encontrar ajuda nos seguintes recursos:
             </Typography>
 
             <Box
-                style={{
+                sx={{
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -71,9 +71,9 @@ const Suporte = () => {
                     marginTop: '15px',
                 }}
             >
-                <List style={{ width: '100%', padding: 0 }}>
+                <List sx={{ width: '100%', padding: 0 }}>
                     <ListItem
-                        style={{
+                        sx={{
                             justifyContent: 'center',
                             padding: '8px 0',
                         }}
@@ -83,7 +83,7 @@ const Suporte = () => {
                         </Link>
                     </ListItem>
                     <ListItem
-                        style={{
+                        sx={{
                             justifyContent: 'center',
                             padding: '8px 0',
                         }}
@@ -93,7 +93,7 @@ const Suporte = () => {
                         </Link>
                     </ListItem>
                     <ListItem
-                        style={{
+                        sx={{
                             justifyContent: 'center',
                             padding: '8px 0',
                         }}

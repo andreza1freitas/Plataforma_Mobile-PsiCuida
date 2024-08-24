@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Container, Typography, Button, List, ListItem, TextField, IconButton, Box } from '@mui/material';
-import axios from 'axios';
+import { Container, Typography, Button, TextField, IconButton, Dialog, DialogTitle, DialogContent, DialogActions, Box } from '@mui/material';
 import { useSelector } from 'react-redux';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import axios from 'axios';
 
 const RespostasForum = () => {
     const { id } = useParams();
@@ -11,28 +11,38 @@ const RespostasForum = () => {
     const [respostas, setRespostas] = useState([]);
     const [novaResposta, setNovaResposta] = useState('');
     const [error, setError] = useState('');
+    const [open, setOpen] = useState(false);
     const pacienteId = useSelector((state) => state.user.userId);
     const apiUrl = process.env.REACT_APP_API_BASE_URL;
     const navigate = useNavigate();
 
-    const handleBack = () => {
-        navigate('/forum-apoio');
-    };
-
     useEffect(() => {
-        axios.get(`${apiUrl}/perguntas/${id}`)
-            .then(response => setPergunta(response.data))
-            .catch(error => {
+        const fetchPergunta = async () => {
+            try {
+                const response = await fetch(`${apiUrl}/perguntas/${id}`);
+                if (!response.ok) throw new Error('Erro ao carregar a pergunta');
+                const data = await response.json();
+                setPergunta(data);
+            } catch (error) {
                 setError('Erro ao carregar a pergunta');
                 console.error(error);
-            });
+            }
+        };
 
-        axios.get(`${apiUrl}/perguntas/${id}/respostas`)
-            .then(response => setRespostas(response.data))
-            .catch(error => {
+        const fetchRespostas = async () => {
+            try {
+                const response = await fetch(`${apiUrl}/perguntas/${id}/respostas`);
+                if (!response.ok) throw new Error('Erro ao carregar as respostas');
+                const data = await response.json();
+                setRespostas(data);
+            } catch (error) {
                 setError('Erro ao carregar as respostas');
                 console.error(error);
-            });
+            }
+        };
+
+        fetchPergunta();
+        fetchRespostas();
     }, [id, apiUrl]);
 
     const handleAddResposta = () => {
@@ -40,6 +50,7 @@ const RespostasForum = () => {
             .then(response => {
                 setRespostas([...respostas, response.data]);
                 setNovaResposta('');
+                handleDialogClose();
             })
             .catch(error => {
                 setError('Erro ao adicionar resposta');
@@ -47,102 +58,115 @@ const RespostasForum = () => {
             });
     };
 
-    if (!pergunta) {
-        return <Typography>Carregando...</Typography>;
-    }
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const utcDate = new Date(date.toUTCString().slice(0, -4));
+        return utcDate.toLocaleDateString();
+    };
+
+    const handleDialogOpen = () => setOpen(true);
+    const handleDialogClose = () => setOpen(false);
+
+    const handleInputChange = (e) => {
+        setNovaResposta(e.target.value);
+    };
+
+    const handleBack = () => {
+        navigate('/forum-apoio');
+    };
 
     return (
         <>
-            <div style={{
+            <Box sx={{
                 width: '100%',
                 backgroundColor: '#003366',
                 color: 'white',
                 height: '60px',
                 display: 'flex',
                 alignItems: 'center',
+                paddingX: 2
             }}>
-                <IconButton onClick={handleBack} style={{ color: 'white' }}>
+                <IconButton onClick={handleBack} sx={{ color: 'white' }}>
                     <ArrowBackIcon />
                 </IconButton>
-                <Typography variant="h5" align="center" style={{ flexGrow: 1, textAlign: 'center', paddingRight: '10%', paddingTop: '8px', fontSize: '33px', fontFamily: 'Saturday' }}>
-                    Respostas
+                <Typography variant="h5" align="center" style={{ flexGrow: 1, textAlign: 'center', paddingRight: '15%', paddingTop: '8px', fontSize: '30px', fontFamily: 'Saturday' }}>
+                    Fórum de Apoio
                 </Typography>
-            </div>
+            </Box>
 
-            <Container>
-                <Typography
-                    variant="h4"
-                    gutterBottom
-                    sx={{
-                        fontSize: '18px',
-                        fontStyle: 'italic',
-                        fontWeight: 'bold',
-                        color: '#003366',
-                        backgroundColor: '#d1f7c0',
-                        padding: '12px 16px',
-                        borderRadius: '8px',
-                        marginTop: '30px',
-                    }}
-                >
-                    {pergunta.descricao}
-                </Typography>
-                <List>
-                    {respostas.map(resposta => (
-                        <ListItem
-                            key={resposta.id}
-                            sx={{
-                                border: '1px solid #ccc',
+            <Container maxWidth="md" sx={{ marginTop: '20px' }}>
+                {pergunta ? (
+                    <Box>
+                        <Box sx={{ marginBottom: '30px' }}>
+                            <Typography variant="h5" gutterBottom>
+                                {pergunta.descricao}
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" gutterBottom>
+                                <strong>Autor: Anônimo - Publicado em: {formatDate(pergunta.data)}</strong>
+                            </Typography>
+                        </Box>
+
+                        <Typography variant="h6" gutterBottom sx={{ marginBottom: '30px', fontFamily:'Rubica', fontSize:'20px' }}>
+                            Respostas
+                        </Typography>
+
+                        {respostas.map((resposta) => (
+                            <Box key={resposta.id} sx={{
+                                backgroundColor: '#dddddd',
+                                padding: '15px',
                                 borderRadius: '8px',
-                                padding: '16px',
-                                marginBottom: '12px',
-                                backgroundColor: '#f9f9f9',
-                                display: 'flex',
-                                flexDirection: 'column',
+                                marginBottom: '15px',
+                                boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)'
+                            }}>
+                                <Typography variant="body2" color="textSecondary" gutterBottom>
+                                    <strong>Autor: Anônimo - Publicado em: {formatDate(resposta.data)}</strong>
+                                </Typography>
+                                <Typography variant="body1">
+                                    {resposta.conteudo}
+                                </Typography>
+                            </Box>
+                        ))}
+
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            onClick={handleDialogOpen}
+                            sx={{
+                                marginTop: '40px',
+                                paddingTop: '8px',
+                                backgroundColor: '#003366',
+                                textTransform: 'none',
+                                fontSize: '17px',
                             }}
                         >
-                            <Typography
-                                variant="body2"
-                                sx={{
-                                    fontStyle: 'italic',
-                                    color: 'gray',
-                                    marginBottom: '8px'
-                                }}
-                            >
-                                Resposta:
-                            </Typography>
-                            <Typography
-                                variant="body1"
-                                sx={{
-                                    fontSize: '16px',
-                                    lineHeight: '1.5',
-                                    color: '#333'
-                                }}
-                            >
-                                {resposta.conteudo}
-                            </Typography>
-                        </ListItem>
-                    ))}
-                </List>
+                            Responder
+                        </Button>
+                        <Dialog open={open} onClose={handleDialogClose} maxWidth="sm" fullWidth>
+                            <DialogTitle>Responder</DialogTitle>
+                            <DialogContent>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    label="Digite sua resposta"
+                                    fullWidth
+                                    multiline
+                                    rows={4}
+                                    value={novaResposta}
+                                    onChange={handleInputChange}
+                                />
+                            </DialogContent>
+                            <DialogActions>
+                                <Button onClick={handleDialogClose} color="secondary">Cancelar</Button>
+                                <Button onClick={handleAddResposta} color="primary">Adicionar</Button>
+                            </DialogActions>
+                        </Dialog>
 
-                <TextField
-                    label="Sua resposta"
-                    fullWidth
-                    multiline
-                    rows={4}
-                    value={novaResposta}
-                    onChange={(e) => setNovaResposta(e.target.value)}
-                />
-                <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                    <Button
-                        variant="contained"
-                        onClick={handleAddResposta}
-                        style={{ background: '#003366', textTransform: 'none' }}
-                    >
-                        Enviar Resposta
-                    </Button>
-                </Box>
-
-                {error && <Typography color="error">{error}</Typography>}
+                        {error && <Typography color="error">{error}</Typography>}
+                    </Box>
+                ) : (
+                    <Typography>Carregando...</Typography>
+                )}
             </Container>
         </>
     );
