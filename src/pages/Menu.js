@@ -28,7 +28,8 @@ const Menu = ({ onLogout }) => {
     '/sessao-virtual': 'Sessões Virtuais',
     '/suporte': 'Suporte Urgência',
     '/ansioso': 'Ansioso(a)',
-    '/Insone': 'Insônia',
+    '/insone': 'Insônia',
+    '/notificacoes': 'Notificações',
     '/logout': 'Sair',
   };
 

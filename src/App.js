@@ -22,6 +22,7 @@ import Ansioso from './pages/Ansioso';
 import EditarPerfil from './pages/EditarPerfil';
 import Insone from './pages/Insone';
 import RespostasForum from './pages/RespostasForum';
+import Notificacoes from './pages/Notificacoes';
 import './App.css';
 
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/ansioso" element={<Ansioso />} /> 
           <Route path="/insone" element={<Insone />} /> 
           <Route path="/perguntas/:id" element={<RespostasForum />} />
+          <Route path="/notificacoes" element={<Notificacoes />} /> 
 
           {/* Rotas Privadas */}
           <Route element={<PrivateRoutes />}>
@@ -51,7 +53,6 @@ function App() {
             <Route path="/configuracao" element={<Configuracao />} />
             <Route path="/suporte" element={<Suporte />} />
             <Route path="/logout" element={<LogoutComponent />} />          
-
           </Route>
           
 

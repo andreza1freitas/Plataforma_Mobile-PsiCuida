@@ -1,5 +1,7 @@
 import React from 'react';
-import { Container, Button, Typography, List, ListItem, Grid, Link, Box } from '@mui/material';
+import { Container, Button, Typography, List, ListItem, Link, Box } from '@mui/material';
+import PhoneIcon from '@mui/icons-material/Phone';
+import ChatIcon from '@mui/icons-material/Chat';
 
 const Suporte = () => {
 
@@ -10,13 +12,21 @@ const Suporte = () => {
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
                 minHeight: '100vh',
-                padding: '20px',
+                padding: '30px',
+                backgroundColor: '#f9f9f9',
             }}
         >
             <Typography
                 gutterBottom
                 align="center"
-                sx={{ marginTop: '15px', marginBottom: '40px', fontSize: '35px', color: 'red', fontFamily:'Rubica' }}
+                sx={{ 
+                    marginTop: '20px', 
+                    marginBottom: '30px', 
+                    fontSize: '36px', 
+                    fontWeight: 'bold', 
+                    color: '#ed0909',
+                    fontFamily: 'Rubik' 
+                }}
             >
                 Precisa de ajuda imediata?
             </Typography>
@@ -24,41 +34,59 @@ const Suporte = () => {
             <Typography
                 paragraph
                 align="center"
-                sx={{ marginBottom: '20px', fontSize: '16px', fontWeight: 'bold' }}
+                sx={{ marginBottom: '30px', fontSize: '18px', color: '#333', lineHeight: '1.5' }}
             >
-                Se você está em uma situação de emergência ou precisa falar com alguém agora, por favor, utilize uma das opções abaixo.
+                Se você está em uma situação de emergência ou precisa falar com alguém agora, utilize uma das opções abaixo.
             </Typography>
 
-            <Grid container direction="column" spacing={3} sx={{ padding: '20px', marginBottom: '40px' }}>
-                <Grid item>
-                    <Button
-                        variant="contained"
-                        color="error"
-                        fullWidth
-                        sx={{ textTransform: 'none', fontSize: '18px', height: '50px' }}
-                    >
-                        Ligar para o CVV (188)
-                    </Button>
-                </Grid>
+            <Box 
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 3, 
+                    padding: '0 20px',
+                    marginBottom: '40px',
+                }}
+            >
+                <Button
+                    variant="contained"
+                    color="error"
+                    fullWidth
+                    startIcon={<PhoneIcon />}
+                    sx={{ 
+                        textTransform: 'none', 
+                        fontSize: '18px', 
+                        height: '55px', 
+                        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+                        '&:hover': { backgroundColor: '#c62828' }
+                    }}
+                >
+                    Ligar para o CVV (188)
+                </Button>
 
-                <Grid item>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        fullWidth
-                        sx={{ textTransform: 'none', fontSize: '18px', height: '50px' }}
-                    >
-                        Falar com Alguém
-                    </Button>
-                </Grid>
-            </Grid>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    startIcon={<ChatIcon />}
+                    sx={{ 
+                        textTransform: 'none', 
+                        fontSize: '18px', 
+                        height: '55px', 
+                        boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
+                        '&:hover': { backgroundColor: '#1565c0' }
+                    }}
+                >
+                    Falar com Alguém
+                </Button>
+            </Box>
 
             <Typography
                 variant="subtitle1"
                 align="center"
-                sx={{ marginBottom: '20px', fontWeight: 'bold' }}
+                sx={{ marginBottom: '20px', fontSize: '20px', fontWeight: 'bold', color: '#555' }}
             >
-                Você também pode encontrar ajuda nos seguintes recursos:
+                Outros recursos de ajuda:
             </Typography>
 
             <Box
@@ -68,38 +96,37 @@ const Suporte = () => {
                     alignItems: 'center',
                     width: '100%',
                     marginBottom: '40px',
-                    marginTop: '15px',
                 }}
             >
                 <List sx={{ width: '100%', padding: 0 }}>
                     <ListItem
                         sx={{
                             justifyContent: 'center',
-                            padding: '8px 0',
+                            padding: '10px 0',
                         }}
                     >
-                        <Link href="https://cvv.org.br/" target="_blank" rel="noopener" underline="hover">
+                        <Link href="https://cvv.org.br/" target="_blank" rel="noopener" underline="hover" sx={{ fontSize: '16px', color: '#1e88e5' }}>
                             Centro de Valorização da Vida (CVV)
                         </Link>
                     </ListItem>
                     <ListItem
                         sx={{
                             justifyContent: 'center',
-                            padding: '8px 0',
+                            padding: '10px 0',
                         }}
                     >
-                        <Link href="https://www.aa.org.br/" target="_blank" rel="noopener" underline="hover">
-                            Alcoólicos Anônimos (aa)
+                        <Link href="https://www.aa.org.br/" target="_blank" rel="noopener" underline="hover" sx={{ fontSize: '16px', color: '#1e88e5' }}>
+                            Alcoólicos Anônimos (AA)
                         </Link>
                     </ListItem>
                     <ListItem
                         sx={{
                             justifyContent: 'center',
-                            padding: '8px 0',
+                            padding: '10px 0',
                         }}
                     >
-                        <Link href="https://www.na.org.br/" target="_blank" rel="noopener" underline="hover">
-                            Narcóticos Anônimos (na)
+                        <Link href="https://www.na.org.br/" target="_blank" rel="noopener" underline="hover" sx={{ fontSize: '16px', color: '#1e88e5' }}>
+                            Narcóticos Anônimos (NA)
                         </Link>
                     </ListItem>
                 </List>
@@ -107,7 +134,7 @@ const Suporte = () => {
 
             {/* Footer */}
             <Box mt={8} textAlign="center">
-                <Typography variant="body2" color="textSecondary" sx={{fontFamily:'Saturday', marginBottom:'80px'}}>
+                <Typography variant="body2" color="textSecondary" sx={{ fontFamily: 'Saturday', marginBottom: '80px', fontSize: '16px' }}>
                     PsiCuida
                 </Typography>
             </Box>

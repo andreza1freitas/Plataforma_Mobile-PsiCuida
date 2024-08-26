@@ -84,20 +84,31 @@ const RespostasForum = () => {
                 height: '60px',
                 display: 'flex',
                 alignItems: 'center',
-                paddingX: 2
+                paddingX: 2,
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                zIndex: 1100
             }}>
                 <IconButton onClick={handleBack} sx={{ color: 'white' }}>
                     <ArrowBackIcon />
                 </IconButton>
-                <Typography variant="h5" align="center" style={{ flexGrow: 1, textAlign: 'center', paddingRight: '15%', paddingTop: '8px', fontSize: '30px', fontFamily: 'Saturday' }}>
+                <Typography variant="h5" align="center" sx={{
+                    flexGrow: 1,
+                    textAlign: 'center',
+                    paddingTop: '10px',
+                    paddingRight: '10%',
+                    fontSize: '32px',
+                    fontFamily: 'Saturday',
+                }}>
                     Fórum de Apoio
                 </Typography>
             </Box>
 
-            <Container maxWidth="md" sx={{ marginTop: '20px' }}>
+            <Container maxWidth="md" sx={{ marginTop: '80px' }}>
                 {pergunta ? (
-                    <Box>
-                        <Box sx={{ marginBottom: '30px' }}>
+                    <Box sx={{ padding: 2 }}>
+                        <Box sx={{ marginBottom: '20px', padding: 2, backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
                             <Typography variant="h5" gutterBottom>
                                 {pergunta.descricao}
                             </Typography>
@@ -106,13 +117,13 @@ const RespostasForum = () => {
                             </Typography>
                         </Box>
 
-                        <Typography variant="h6" gutterBottom sx={{ marginBottom: '30px', fontFamily:'Rubica', fontSize:'20px' }}>
+                        <Typography variant="h6" gutterBottom sx={{ marginBottom: '20px', fontFamily:'Rubica', fontSize:'20px' }}>
                             Respostas
                         </Typography>
 
                         {respostas.map((resposta) => (
                             <Box key={resposta.id} sx={{
-                                backgroundColor: '#dddddd',
+                                backgroundColor: '#f5f5f5',
                                 padding: '15px',
                                 borderRadius: '8px',
                                 marginBottom: '15px',
@@ -133,15 +144,16 @@ const RespostasForum = () => {
                             fullWidth
                             onClick={handleDialogOpen}
                             sx={{
-                                marginTop: '40px',
-                                paddingTop: '8px',
+                                marginTop: '20px',
+                                padding: '10px',
                                 backgroundColor: '#003366',
                                 textTransform: 'none',
-                                fontSize: '17px',
+                                fontSize: '16px',
                             }}
                         >
                             Responder
                         </Button>
+
                         <Dialog open={open} onClose={handleDialogClose} maxWidth="sm" fullWidth>
                             <DialogTitle>Responder</DialogTitle>
                             <DialogContent>
@@ -162,7 +174,7 @@ const RespostasForum = () => {
                             </DialogActions>
                         </Dialog>
 
-                        {error && <Typography color="error">{error}</Typography>}
+                        {error && <Typography color="error" sx={{ marginTop: '20px' }}>{error}</Typography>}
                     </Box>
                 ) : (
                     <Typography>Carregando...</Typography>

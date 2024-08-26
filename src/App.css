@@ -1,14 +1,14 @@
 
 @font-face {
   font-family: 'Saturday'; 
-  src: url('./fonts/Saturday.otf') format('opentype');
+  src: url('../public/assets/fonts/Saturday.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Rubica'; 
-  src: url('./fonts/Rubica.otf') format('opentype');
+  src: url('../public/assets/fonts/Rubica.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }

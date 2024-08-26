@@ -93,7 +93,7 @@ const Diario = () => {
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
             <Container>
-                <Typography gutterBottom align="center" style={{ paddingTop: 30, color: '#003366', fontSize: '33px', fontFamily:'Saturday' }}>
+                <Typography gutterBottom align="center" style={{ paddingTop: 30, color: '#003366', fontSize: '33px', fontFamily: 'Saturday' }}>
                     Como foi seu dia?
                 </Typography>
                 <FormControl fullWidth margin="normal" required>
@@ -119,9 +119,11 @@ const Diario = () => {
                         fullWidth
                         margin="normal"
                     >
-                        <MenuItem value="bom">Bom</MenuItem>
-                        <MenuItem value="ruim">Ruim</MenuItem>
-                        <MenuItem value="normal">Normal</MenuItem>
+                        <MenuItem value="bom">Bom 😊</MenuItem>
+                        <MenuItem value="otimo">Ótimo 😄 </MenuItem>
+                        <MenuItem value="normal">Normal 😐</MenuItem>
+                        <MenuItem value="ruim">Ruim 😟</MenuItem>
+                        <MenuItem value="pessimo">Péssimo 😢</MenuItem>
                     </TextField>
                     <TextField
                         label="O que te fez bem?"
@@ -176,7 +178,7 @@ const Diario = () => {
 
                 {/* Footer */}
                 <Box mt={8} textAlign="center">
-                    <Typography variant="body2" color="textSecondary" sx={{fontFamily:'Saturday'}}>
+                    <Typography variant="body2" color="textSecondary" sx={{ fontFamily: 'Saturday' }}>
                         PsiCuida
                     </Typography>
                 </Box>
