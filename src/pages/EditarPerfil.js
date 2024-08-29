@@ -113,14 +113,14 @@ const EditarPerfil = () => {
                 body: JSON.stringify(formDataToSubmit)
             });
 
-            if (response.ok) {   
-                console.log('Perfil atualizado com sucesso!');      
-                setSnackbarMessage('Perfil atualizado com sucesso!');    
+            if (response.ok) {
+                console.log('Perfil atualizado com sucesso!');
+                setSnackbarMessage('Perfil atualizado com sucesso!');
                 setSnackbarSeverity('success');
                 setSnackbarOpen(true);
 
                 setTimeout(() => {
-                    navigate('/perfil');
+                    navigate('/configuracao');
                 }, 2000);
 
             } else {
@@ -154,7 +154,7 @@ const EditarPerfil = () => {
                 <IconButton onClick={handleBack} style={{ color: 'white' }}>
                     <ArrowBackIcon />
                 </IconButton>
-                <Typography variant="h5" align="center" sx={{ flexGrow: 1, textAlign: 'center', paddingRight: '10%', paddingTop: '8px',fontSize: '31px', fontFamily:'Saturday' }}>
+                <Typography variant="h5" align="center" sx={{ flexGrow: 1, textAlign: 'center', paddingRight: '10%', paddingTop: '8px', fontSize: '31px', fontFamily: 'Saturday' }}>
                     Editar Perfil
                 </Typography>
             </div>
@@ -292,6 +292,9 @@ const EditarPerfil = () => {
                                     </IconButton>
                                 </InputAdornment>
                             )
+                        }}
+                        inputProps={{
+                            autoComplete: 'current-password' 
                         }}
                     />
 

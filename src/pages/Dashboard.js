@@ -16,6 +16,10 @@ const Dashboard = () => {
         navigate('/insone'); // Navega para a página "Insone"
     };
 
+    const handleTristeClick = () => {
+        navigate('/triste'); // Navega para a página "Tiste"
+    };
+
     return (
         <Container
             sx={{
@@ -54,6 +58,7 @@ const Dashboard = () => {
                 variant="contained"
                 fullWidth
                 sx={{ margin: '8px 0', textTransform: 'none', backgroundColor: '#81C784', fontSize: '17px' }}
+                onClick={handleTristeClick}
             >
                 Triste
             </Button>

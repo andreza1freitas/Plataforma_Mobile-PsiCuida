@@ -4,9 +4,11 @@ import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Typography from '@mui/material/Typography';
 import { Box, Switch } from '@mui/material';
+import { useSelector } from 'react-redux';
 
 const Notificacoes = () => {
     const navigate = useNavigate();
+    const userId = useSelector((state) => state.user.userId);
     const [notificacoes, setNotificacoes] = useState({
         notificacao1: false,
         notificacao2: false,
@@ -14,11 +16,11 @@ const Notificacoes = () => {
     });
 
     useEffect(() => {
-        const savedNotificacoes = JSON.parse(localStorage.getItem('notificacoes'));
+        const savedNotificacoes = JSON.parse(localStorage.getItem(`notificacoes_${userId}`));
         if (savedNotificacoes) {
             setNotificacoes(savedNotificacoes);
         }
-    }, []);
+    }, [userId]);
 
     const handleBack = () => {
         navigate('/configuracao');
@@ -27,7 +29,7 @@ const Notificacoes = () => {
     const handleToggle = (key) => {
         setNotificacoes((prev) => {
             const updatedNotificacoes = { ...prev, [key]: !prev[key] };
-            localStorage.setItem('notificacoes', JSON.stringify(updatedNotificacoes));
+            localStorage.setItem(`notificacoes_${userId}`, JSON.stringify(updatedNotificacoes));
             return updatedNotificacoes;
         });
     };
@@ -74,17 +76,25 @@ const Notificacoes = () => {
                 alignItems="center"
                 sx={{ marginTop: '4%', flexGrow: 1 }}
             >
-                <Typography variant="h6" gutterBottom align="center" sx={{ marginBottom: '60px', textAlign: 'center', color: '#003366', fontSize: '22px' }}>
+                <Typography variant="h6" gutterBottom align="center"
+                    sx={{
+                        marginBottom: '60px',
+                        textAlign: 'center',
+                        color: '#003366',
+                        fontSize: '26px',
+                        fontWeight: 'bold',
+                        fontFamily: 'Rubik'
+                    }}
+                >
                     Escolha as notificações que deseja receber
                 </Typography>
 
                 <Box width="100%" maxWidth="400px">
-                    <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
+                    <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mb: 2, fontWeight: 'bold' }}>
                         <Typography variant="body1">Agendamento Sessão</Typography>
                         <Switch
                             checked={!!notificacoes.notificacao1}
                             onChange={() => handleToggle('notificacao1')}
-                            color="primary"
                         />
                     </Box>
                     <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
@@ -92,7 +102,6 @@ const Notificacoes = () => {
                         <Switch
                             checked={!!notificacoes.notificacao2}
                             onChange={() => handleToggle('notificacao2')}
-                            color="primary"
                         />
                     </Box>
                     <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
@@ -100,7 +109,6 @@ const Notificacoes = () => {
                         <Switch
                             checked={!!notificacoes.notificacao3}
                             onChange={() => handleToggle('notificacao3')}
-                            color="primary"
                         />
                     </Box>
                 </Box>

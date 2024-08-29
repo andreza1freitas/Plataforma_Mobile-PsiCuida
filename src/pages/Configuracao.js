@@ -43,12 +43,19 @@ const Configuracao = () => {
                 paddingBottom: '20px'
             }}
         >
-            <Stack spacing={5} style={{ width: '100%' }}>
+            <Stack spacing={6} style={{ width: '100%' }}>
                 <Button
                     variant="contained"
                     fullWidth
-                    style={{ backgroundColor: '#003366', textTransform: 'none', fontSize: '17px' }}
-                    startIcon={<EditIcon />}
+                    style={{
+                        backgroundColor: '#003366',
+                        textTransform: 'none',
+                        fontSize: '17px',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center'
+                    }}
+                    endIcon={<EditIcon />}
                     onClick={handleEditProfile}
                 >
                     Editar Perfil
@@ -56,8 +63,15 @@ const Configuracao = () => {
                 <Button
                     variant="contained"
                     fullWidth
-                    style={{ backgroundColor: '#003366', textTransform: 'none', fontSize: '17px' }}
-                    startIcon={<NotificationsIcon />}
+                    style={{
+                        backgroundColor: '#003366',
+                        textTransform: 'none',
+                        fontSize: '17px',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center'
+                    }}
+                    endIcon={<NotificationsIcon />}
                     onClick={handleNotificationProfile}
                 >
                     Configurar Notificações
@@ -66,8 +80,15 @@ const Configuracao = () => {
                     variant="contained"
                     color="secondary"
                     fullWidth
-                    style={{ backgroundColor: '#003366', textTransform: 'none', fontSize: '17px' }}
-                    startIcon={<DeleteIcon />}
+                    style={{
+                        backgroundColor: '#003366',
+                        textTransform: 'none',
+                        fontSize: '17px',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center'
+                    }}
+                    endIcon={<DeleteIcon />}
                     onClick={handleOpenDialog}
                 >
                     Excluir Conta

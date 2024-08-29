@@ -23,13 +23,21 @@ const Ansioso = () => {
         <IconButton onClick={handleBack} style={{ color: 'white' }}>
           <ArrowBackIcon />
         </IconButton>
-        <Typography variant="h5" align="center" style={{ flexGrow: 1, textAlign: 'center', paddingRight: '10%', paddingTop: '8px', fontSize: '33px', fontFamily:'Saturday' }}>
+        <Typography variant="h5" align="center"
+          style={{
+            flexGrow: 1,
+            textAlign: 'center',
+            paddingRight: '10%',
+            paddingTop: '8px',
+            fontSize: '33px',
+            fontFamily: 'Saturday'
+          }}>
           Ansioso(a)
         </Typography>
       </div>
 
       <Container maxWidth="md" sx={{ marginTop: '20px' }}>
-        <Typography variant="body1" align="center" paragraph sx={{ fontSize: '15px' }}>
+        <Typography variant="body1" align="center" paragraph sx={{ fontSize: '17px' }}>
           Respire fundo. Viva o momento. A ansiedade pode ser algo difícil de lidar,
           mas você é mais forte do que qualquer obstáculo. Muitas vezes, tudo o que a gente
           precisa na vida é de um momento de pausa. Relaxe e lembre-se de que a ansiedade
@@ -66,9 +74,12 @@ const Ansioso = () => {
           </Typography>
 
           <Typography
-            variant="h6"
+            variant="h5"
             align="center"
-            sx={{ marginTop: '40px', fontWeight: 'bold' }}
+            sx={{
+              marginTop: '40px', fontWeight: 'bold',
+              fontFamily: 'Rubik'
+            }}
           >
             RMR - Ansiedade
           </Typography>
@@ -77,7 +88,7 @@ const Ansioso = () => {
             variant="body1"
             align="center"
             paragraph
-            sx={{ fontSize: '15px', marginTop: '10px' }}
+            sx={{ fontSize: '17px', marginTop: '10px' }}
           >
             Para promover mudanças tranquilizadoras na sua mente subconsciente através do Recondicionamento da mente
             pelo Relaxamento <strong>(RMR)</strong>.<br></br>
@@ -89,7 +100,7 @@ const Ansioso = () => {
             variant="body1"
             align="center"
             paragraph
-            sx={{ fontSize: '15px', marginTop: '10px' }}
+            sx={{ fontSize: '17px', marginTop: '10px' }}
           >
             O <strong>RMR</strong> pode ser usado a qualquer momento, mas note que o vídeo dura 10 minutos. Reserve o tempo necessário.
             Se dormir durante o áudio, procure fazê-lo sentado(a).<br></br>
@@ -125,7 +136,7 @@ const Ansioso = () => {
 
         {/* Footer */}
         <Box mt={8} textAlign="center">
-          <Typography variant="body2" color="textSecondary" sx={{ fontFamily: 'Saturday'}}>
+          <Typography variant="body2" color="textSecondary" sx={{ fontFamily: 'Saturday' }}>
             PsiCuida
           </Typography>
         </Box>

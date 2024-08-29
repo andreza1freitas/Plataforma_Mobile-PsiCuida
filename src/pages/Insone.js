@@ -23,17 +23,21 @@ const Insone = () => {
                 <IconButton onClick={handleBack} style={{ color: 'white' }}>
                     <ArrowBackIcon />
                 </IconButton>
-                <Typography variant="h5" align="center" sx={{ flexGrow: 1, textAlign: 'center', paddingRight: '10%', paddingTop: '8px',fontSize: '33px', fontFamily:'Saturday' }}>
+                <Typography variant="h5" align="center" sx={{ flexGrow: 1, textAlign: 'center', paddingRight: '10%', paddingTop: '8px', fontSize: '33px', fontFamily: 'Saturday' }}>
                     Insônia
                 </Typography>
             </div>
 
             <Container maxWidth="md" sx={{ mt: 3 }}>
                 <Typography
-                    variant="h6"
+                    variant="h5"
                     align="center"
                     paragraph
-                    sx={{ fontWeight: 'bold', mb: 2 }}
+                    sx={{
+                        fontWeight: 'bold', mb: 2,
+                        fontFamily: 'Rubik',
+                        color: '#003366'
+                    }}
                 >
                     Hora de Desligar
                 </Typography>
@@ -42,13 +46,13 @@ const Insone = () => {
                     variant="body1"
                     align="left"
                     paragraph
-                    sx={{ fontSize: '15px', lineHeight: 1.6 }}
+                    sx={{ fontSize: '17px', lineHeight: 1.6, fontWeight: 'bold' }}
                 >
                     Dicas e princípios para dormir bem:
                 </Typography>
 
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                    {[ 
+                <Box sx={{ display: 'flex', flexDirection: 'column',fontSize: '16px', alignItems: 'flex-start' }}>
+                    {[
                         "Evite comer muito e ingerir cafeína à noite.",
                         "Se exponha à luz solar durante o dia e 'canse' o corpo. Evite trabalho, redes sociais, eletrônicos e luz forte por pelo menos duas horas antes de dormir.",
                         "Escreva suas preocupações e tarefas para o dia seguinte.",
@@ -66,7 +70,8 @@ const Insone = () => {
                             key={index}
                             variant="body1"
                             align="left"
-                            sx={{ fontSize: '15px', lineHeight: 1.6, marginBottom: '10px' }}
+                            
+                            sx={{ fontSize: '16px', lineHeight: 1.6, marginBottom: '10px', textAlign: 'justify' }}
                         >
                             {index + 1}. {dica}
                         </Typography>
@@ -77,7 +82,7 @@ const Insone = () => {
                     variant="body1"
                     align="center"
                     paragraph
-                    sx={{ fontSize: '15px', lineHeight: 1.6, marginTop: '20px' }}
+                    sx={{ fontSize: '16px', lineHeight: 1.6, marginTop: '20px' }}
                 >
                     Além de seguir esses princípios, esse áudio também pode ajudar a pegar no sono e a dormir bem.&nbsp;
                     <strong>Para melhores resultados, ouça com fones de ouvido.</strong>
@@ -114,7 +119,7 @@ const Insone = () => {
 
                 {/* Footer */}
                 <Box mt={8} textAlign="center">
-                    <Typography variant="body2" color="textSecondary" sx={{ fontFamily: 'Saturday'}}>
+                    <Typography variant="body2" color="textSecondary" sx={{ fontFamily: 'Saturday' }}>
                         PsiCuida
                     </Typography>
                 </Box>

@@ -78,7 +78,7 @@ const ForumApoio = () => {
                             secondary={`${pergunta.respostas.length} respostas`}
                             sx={{
                                 textDecoration: 'underline',
-                                color: '#007bff',
+                                color: '#070505',
                                 cursor: 'pointer'
                             }}
                         />
