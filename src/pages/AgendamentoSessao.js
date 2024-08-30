@@ -314,8 +314,8 @@ const AgendamentoSessao = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Data, Hora e Médico</TableCell>
-              <TableCell>Ação</TableCell>
+              <TableCell sx={{fontWeight: 'bold'}}> Data, Hora e Médico </TableCell>
+              <TableCell sx={{fontWeight: 'bold'}}> Ação </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -333,11 +333,11 @@ const AgendamentoSessao = () => {
                   <TableCell>
                     {agendamento.status === 'PENDENTE' && (
                       <>
-                        <IconButton onClick={() => handleEditar(agendamento)} color="primary">
+                        <IconButton onClick={() => handleEditar(agendamento)} sx={{color:'#003366'}}>
                           <EditIcon />
                         </IconButton>
 
-                        <IconButton onClick={() => handleOpenConfirmDialog(agendamento.id)} color="primary">
+                        <IconButton onClick={() => handleOpenConfirmDialog(agendamento.id)} sx={{color:'#003366'}}>
                           <CancelIcon />
                         </IconButton>
                       </>

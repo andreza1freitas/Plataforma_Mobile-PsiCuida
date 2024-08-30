@@ -119,6 +119,9 @@ const Diario = () => {
                         fullWidth
                         margin="normal"
                     >
+                        <MenuItem value="">
+                            <em>Selecione</em>
+                        </MenuItem>
                         <MenuItem value="bom">Bom 😊</MenuItem>
                         <MenuItem value="otimo">Ótimo 😄 </MenuItem>
                         <MenuItem value="normal">Normal 😐</MenuItem>

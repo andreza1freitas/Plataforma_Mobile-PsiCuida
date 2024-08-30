@@ -108,14 +108,16 @@ const RespostasForum = () => {
             <Container maxWidth="md" sx={{ marginTop: '80px' }}>
                 {pergunta ? (
                     <Box sx={{ padding: 2 }}>
-                        <Box sx={{ marginBottom: '20px', padding: 2, backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
-                            <Typography variant="h5" gutterBottom>
-                                {pergunta.descricao}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" gutterBottom>
-                                <strong>Autor: Anônimo - Publicado em: {formatDate(pergunta.data)}</strong>
-                            </Typography>
-                        </Box>
+                        {pergunta.descricao && (
+                            <Box sx={{ marginBottom: '20px', padding: 2, backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
+                                <Typography variant="h5" gutterBottom>
+                                    {pergunta.descricao}
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" gutterBottom>
+                                    <strong>Autor: Anônimo - Publicado em: {formatDate(pergunta.data)}</strong>
+                                </Typography>
+                            </Box>
+                        )}
 
                         <Typography variant="h6" gutterBottom sx={{ marginBottom: '20px', fontFamily:'Rubica', fontSize:'20px' }}>
                             Respostas
@@ -127,7 +129,9 @@ const RespostasForum = () => {
                                 padding: '15px',
                                 borderRadius: '8px',
                                 marginBottom: '15px',
-                                boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)'
+                                boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
+                                wordWrap: 'break-word',
+                                whiteSpace: 'pre-wrap',
                             }}>
                                 <Typography variant="body2" color="textSecondary" gutterBottom>
                                     <strong>Autor: Anônimo - Publicado em: {formatDate(resposta.data)}</strong>
