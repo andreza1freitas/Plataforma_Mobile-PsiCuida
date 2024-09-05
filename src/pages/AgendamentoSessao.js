@@ -40,7 +40,7 @@ const AgendamentoSessao = () => {
   ];
 
   const statusColors = {
-    PENDENTE: '#ffff80',
+    PENDENTE: '#fffba0',
     AGENDADO: '#4CAF50',
   };
 

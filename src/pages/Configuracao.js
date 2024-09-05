@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
-import { Container, Stack, Button, Box, Typography, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import { Container, Stack, Button, Box, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Snackbar, Alert } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Configuracao = () => {
     const navigate = useNavigate();
     const [openDialog, setOpenDialog] = useState(false);
+    const [openSnackbar, setOpenSnackbar] = useState(false); 
+    const [snackbarMessage, setSnackbarMessage] = useState(''); 
+    const [snackbarSeverity, setSnackbarSeverity] = useState('success'); 
+
+    const pacienteId = useSelector((state) => state.user.userId);
 
     const handleEditProfile = () => {
         navigate('/editar-perfil');
@@ -25,9 +31,36 @@ const Configuracao = () => {
         setOpenDialog(false);
     };
 
-    const handleConfirmDelete = () => {
-        // TODO adicionar lógica para excluir a conta
-        console.log('Conta excluída');
+    const handleSnackbarClose = () => {
+        setOpenSnackbar(false);
+    };
+
+    const handleConfirmDelete = async () => {
+        try {
+            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/pacientes/${pacienteId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+    
+            if (response.ok) {
+                setSnackbarMessage('Conta excluída com sucesso');
+                setSnackbarSeverity('success');
+                setOpenSnackbar(true);
+                setTimeout(() => {
+                    navigate("/");
+                }, 4000); 
+            } else {
+                setSnackbarMessage('Falha ao excluir conta');
+                setSnackbarSeverity('error');
+                setOpenSnackbar(true);
+            }
+        } catch (error) {
+            setSnackbarMessage('Erro ao excluir conta');
+            setSnackbarSeverity('error');
+            setOpenSnackbar(true);
+        }
         handleCloseDialog();
     };
 
@@ -118,6 +151,17 @@ const Configuracao = () => {
                     </Button>
                 </DialogActions>
             </Dialog>
+
+            <Snackbar
+                open={openSnackbar}
+                autoHideDuration={4000}
+                onClose={handleSnackbarClose}
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            >
+                <Alert onClose={handleSnackbarClose} severity={snackbarSeverity} sx={{ width: '100%' }}>
+                    {snackbarMessage}
+                </Alert>
+            </Snackbar>
 
             {/* Footer */}
             <Box mt={8} textAlign="center">

@@ -51,17 +51,17 @@ const Menu = ({ onLogout }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" 
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '90%',
-            fontSize: '30px',
-            paddingTop: '5px',
-            fontFamily: 'Saturday'
-            
-          }}>
+          <Typography variant="h6"
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '90%',
+              fontSize: '30px',
+              paddingTop: '5px',
+              fontFamily: 'Saturday'
+
+            }}>
             {currentTitle}
           </Typography>
         </Toolbar>
@@ -89,23 +89,17 @@ const Menu = ({ onLogout }) => {
               </ListItemIcon>
               <ListItemText primary="Agendamento de Sessão" />
             </ListItemButton>
+            <ListItemButton component={Link} to="/sessao-virtual">
+              <ListItemIcon>
+                <VideoCallIcon />
+              </ListItemIcon>
+              <ListItemText primary="Sessões Virtuais" />
+            </ListItemButton>
             <ListItemButton component={Link} to="/auto-ajuda">
               <ListItemIcon>
                 <SelfImprovementIcon />
               </ListItemIcon>
               <ListItemText primary="Autoajuda" />
-            </ListItemButton>
-            <ListItemButton component={Link} to="/forum-apoio">
-              <ListItemIcon>
-                <GroupIcon />
-              </ListItemIcon>
-              <ListItemText primary="Fórum de Apoio" />
-            </ListItemButton>
-            <ListItemButton component={Link} to="/configuracao">
-              <ListItemIcon>
-                <SettingsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Configurações" />
             </ListItemButton>
             <ListItemButton component={Link} to="/conteudo-educacional">
               <ListItemIcon>
@@ -119,17 +113,23 @@ const Menu = ({ onLogout }) => {
               </ListItemIcon>
               <ListItemText primary="Diário" />
             </ListItemButton>
-            <ListItemButton component={Link} to="/sessao-virtual">
+            <ListItemButton component={Link} to="/forum-apoio">
               <ListItemIcon>
-                <VideoCallIcon />
+                <GroupIcon />
               </ListItemIcon>
-              <ListItemText primary="Sessões Virtuais" />
+              <ListItemText primary="Fórum de Apoio" />
             </ListItemButton>
             <ListItemButton component={Link} to="/suporte">
               <ListItemIcon>
                 <LocalHospitalIcon />
               </ListItemIcon>
               <ListItemText primary="Suporte Urgência" />
+            </ListItemButton>
+            <ListItemButton component={Link} to="/configuracao">
+              <ListItemIcon>
+                <SettingsIcon />
+              </ListItemIcon>
+              <ListItemText primary="Configurações" />
             </ListItemButton>
             <ListItemButton component={Link} to="/logout">
               <ListItemIcon>

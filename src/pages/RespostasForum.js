@@ -109,8 +109,8 @@ const RespostasForum = () => {
                 {pergunta ? (
                     <Box sx={{ padding: 2 }}>
                         {pergunta.descricao && (
-                            <Box sx={{ marginBottom: '20px', padding: 2, backgroundColor: '#f5f5f5', borderRadius: '8px' }}>
-                                <Typography variant="h5" gutterBottom>
+                            <Box sx={{ marginBottom: '20px', padding: 2, backgroundColor: '#c4f9c0', borderRadius: '8px' }}>
+                                <Typography variant="h6" gutterBottom>
                                     {pergunta.descricao}
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" gutterBottom>
