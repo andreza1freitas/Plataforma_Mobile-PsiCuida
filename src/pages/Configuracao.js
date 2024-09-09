@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Stack, Button, Box, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Snackbar, Alert } from '@mui/material';
+import { Container, Stack, Button, Typography, Dialog, DialogActions, DialogContent, DialogTitle, Snackbar, Alert } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -50,7 +50,7 @@ const Configuracao = () => {
                 setOpenSnackbar(true);
                 setTimeout(() => {
                     navigate("/");
-                }, 4000); 
+                }, 3000); 
             } else {
                 setSnackbarMessage('Falha ao excluir conta');
                 setSnackbarSeverity('error');
@@ -139,7 +139,8 @@ const Configuracao = () => {
                 </DialogTitle>
                 <DialogContent>
                     <Typography variant="body1">
-                        Você realmente deseja excluir sua conta? Esta ação não pode ser desfeita.
+                    Você realmente deseja excluir sua conta? Esta ação não pode ser desfeita,
+                    mas suas perguntas e respostas no fórum continuarão anonimamente.
                     </Typography>
                 </DialogContent>
                 <DialogActions>
@@ -162,13 +163,6 @@ const Configuracao = () => {
                     {snackbarMessage}
                 </Alert>
             </Snackbar>
-
-            {/* Footer */}
-            <Box mt={8} textAlign="center">
-                <Typography variant="body2" color="textSecondary" sx={{ fontFamily: 'Saturday', marginBottom: '80px' }}>
-                    PsiCuida
-                </Typography>
-            </Box>
         </Container>
     );
 };

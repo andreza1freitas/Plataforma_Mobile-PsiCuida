@@ -4,13 +4,8 @@ import { Container, Typography, Card, CardContent, Button, Box, CardMedia } from
 const ConteudoEducacional = () => {
   const artigos = [
     {
-      title: 'Técnicas de Autoajuda',
-      description: 'Descubra técnicas simples para melhorar a sua qualidade de vida.',
-      image: '/assets/image/imagem-autoajuda.jpg',
-    },
-    {
       title: 'Saúde Mental e Bem-Estar',
-      description: 'Artigos e dicas para cuidar da sua saúde mental.',
+      description: 'Dicas para cuidar da sua saúde mental.',
       image: '/assets/image/imagem-bem-estar.jpg',
     },
     {
@@ -23,21 +18,26 @@ const ConteudoEducacional = () => {
 
   const videos = [
     {
-      title: 'Práticas de Meditação',
-      description: 'Aprenda a meditar para reduzir o estresse e aumentar o foco.',
-      videoUrl: 'https://www.youtube.com/embed/1MrQPZuSs7A',
+      title: 'CRIE Bons Hábitos e DESTRUA os Maus Hábitos',
+      description: 'Descubra como criar bons hábitos e eliminar os maus hábitos que estão prejudicando sua vida.',
+      videoUrl: 'https://www.youtube.com/embed/I_qGitEMumY',
     },
     {
-      title: 'Exercícios de Relaxamento',
-      description: 'Técnicas para relaxar e aliviar a tensão do dia a dia.',
-      videoUrl: 'https://www.youtube.com/embed/n8zb-rSgTBo',
+      title: 'Saúde Mental',
+      description: 'Sabia que existe um assunto no universo da saúde tão importante quanto a saúde física? Pois é, precisamos falar sobre saúde mental.',
+      videoUrl: 'https://www.youtube.com/embed/UwyE_XIQ7DA'
+    },
+    {
+      title: 'Como tratar a depressão sem utilizar remédios',
+      description: 'Você sabia que Ansiedade e Depressão tem cura? Com o tratamento adequado, a grande maioria dos pacientes consegue eliminar os sintomas da Ansiedade e Depressão, sem o uso de medicamentos.',
+      videoUrl: 'https://www.youtube.com/embed/kKhyunA1Qro',
     },
   ];
 
   return (
     <Container>
 
-      <Typography variant="h6" component="h2" gutterBottom sx={{marginTop: 3, textAlign: 'center', color: '#003366', fontSize: '25px', fontFamily: 'Saturday' }}>
+      <Typography variant="h6" component="h2" gutterBottom sx={{ marginTop: 3, textAlign: 'center', color: '#003366', fontSize: '25px', fontFamily: 'Saturday' }}>
         Artigos
       </Typography>
 
@@ -62,7 +62,7 @@ const ConteudoEducacional = () => {
         ))}
       </Box>
 
-      <Typography variant="h6" component="h2" gutterBottom sx={{marginTop: 3, textAlign: 'center', color: '#003366', fontSize: '25px', fontFamily: 'Saturday' }}>
+      <Typography variant="h6" component="h2" gutterBottom sx={{ marginTop: 3, textAlign: 'center', color: '#003366', fontSize: '25px', fontFamily: 'Saturday' }}>
         Vídeos Informativos
       </Typography>
 
@@ -92,13 +92,6 @@ const ConteudoEducacional = () => {
             </Card>
           </Box>
         ))}
-      </Box>
-
-      {/* Footer */}
-      <Box mt={8} textAlign="center">
-        <Typography variant="body2" color="textSecondary" sx={{ fontFamily: 'Saturday' }}>
-          PsiCuida
-        </Typography>
       </Box>
     </Container>
   );

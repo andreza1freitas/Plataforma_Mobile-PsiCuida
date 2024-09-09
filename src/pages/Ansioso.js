@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, IconButton, Link } from '@mui/material';
+import { Container, Typography, Box, IconButton, Link, Card, CardContent } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
@@ -38,100 +38,79 @@ const Ansioso = () => {
 
       <Container maxWidth="md" sx={{ marginTop: '20px' }}>
         <Typography variant="body1" align="center" paragraph sx={{ fontSize: '17px' }}>
-          Respire fundo. Viva o momento. A ansiedade pode ser algo difícil de lidar,
-          mas você é mais forte do que qualquer obstáculo. Muitas vezes, tudo o que a gente
-          precisa na vida é de um momento de pausa. Relaxe e lembre-se de que a ansiedade
-          não define quem você é. Você é um milhão de outras coisas que te fazem este ser
-          incrível e que todos admiram. Tente não pensar tanto no que está por vir. Viva o
-          presente. Tenha um pouco mais de calma, porque esse momento vai passar.
+          Respire fundo. Lembre-se de que você está no controle do que sente, mesmo quando parece que as coisas estão fora de controle.
+          A ansiedade pode ser avassaladora, mas ela não define quem você é. Este momento de incerteza vai passar. Tente focar no agora, no que está ao seu alcance neste instante.
+          Não se cobre tanto pelo futuro, nem pelos detalhes que você ainda não resolveu.
+        </Typography>
+
+        <Typography variant="body1" align="center" paragraph sx={{ fontSize: '17px' }}>
+          Permita-se sentir, mas também permita-se relaxar. Você é mais forte do que imagina, e está fazendo o melhor que pode. Se precisar, dê uma pausa. 
+          Você merece momentos de paz e equilíbrio. Tudo vai se ajustar com o tempo, e você vai sair dessa situação mais forte e resiliente.
         </Typography>
 
         {/* vídeo do YouTube */}
-        <Box display="flex" flexDirection="column" alignItems="center" mt={4}>
-          <iframe
-            width="320"
-            height="180"
-            src="https://www.youtube.com/embed/AMu9YYKB3YU"
-            title="OUÇA QUANDO ESTIVER NUMA CRISE DE ANSIEDADE"
-            style={{ border: 'none' }}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+        <Box display="flex" flexDirection="column" alignItems="center" mt={4} gap={4}>
+          {/* Primeiro vídeo */}
+          <Card>
+            <CardContent>
+              <Box sx={{ marginTop: 2 }}>
+                <iframe
+                  width="100%"
+                  height="200"
+                  src="https://www.youtube.com/embed/AMu9YYKB3YU"
+                  title="OUÇA QUANDO ESTIVER NUMA CRISE DE ANSIEDADE"
+                  style={{ border: 'none' }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </Box>
+              <Typography
+                variant="caption"
+                align="center"
+                sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
+              >
+                <Link
+                  href="https://www.youtube.com/embed/AMu9YYKB3YU"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  underline="always"
+                >
+                  OUÇA QUANDO ESTIVER NUMA CRISE DE ANSIEDADE
+                </Link>
+              </Typography>
+            </CardContent>
+          </Card>
 
-          <Typography
-            variant="caption"
-            align="center"
-            sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
-          >
-            <Link
-              href="https://www.youtube.com/embed/AMu9YYKB3YU"
-              target="_blank"
-              rel="noopener noreferrer"
-              underline="always"
-            >
-              OUÇA QUANDO ESTIVER NUMA CRISE DE ANSIEDADE
-            </Link>
-          </Typography>
-
-          <Typography
-            variant="h5"
-            align="center"
-            sx={{
-              marginTop: '40px', fontWeight: 'bold',
-              fontFamily: 'Rubik'
-            }}
-          >
-            RMR - Ansiedade
-          </Typography>
-
-          <Typography
-            variant="body1"
-            align="center"
-            paragraph
-            sx={{ fontSize: '17px', marginTop: '10px' }}
-          >
-            Para promover mudanças tranquilizadoras na sua mente subconsciente através do Recondicionamento da mente
-            pelo Relaxamento <strong>(RMR)</strong>.<br></br>
-            Com o <strong>RMR</strong>, além de você experimentar um relaxamento profundo, a sua mente se tornará mais
-            permeável para que a mudança se torne mais fácil e natural.
-          </Typography>
-
-          <Typography
-            variant="body1"
-            align="center"
-            paragraph
-            sx={{ fontSize: '17px', marginTop: '10px' }}
-          >
-            O <strong>RMR</strong> pode ser usado a qualquer momento, mas note que o vídeo dura 10 minutos. Reserve o tempo necessário.
-            Se dormir durante o áudio, procure fazê-lo sentado(a).<br></br>
-            <strong>Para melhores resultados, ouça com fones de ouvido.</strong>
-          </Typography>
-
-          {/* vídeo do YouTube */}
-          <iframe
-            width="320"
-            height="180"
-            src="https://www.youtube.com/embed/1fYt92gSJ_U"
-            title="MINDFULNESS: ANSIEDADE ZERO (MEDITAÇÃO GUIADA)"
-            style={{ border: 'none' }}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-
-          <Typography
-            variant="caption"
-            align="center"
-            sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
-          >
-            <Link
-              href="https://www.youtube.com/embed/1fYt92gSJ_U"
-              target="_blank"
-              rel="noopener noreferrer"
-              underline="always"
-            >
-              MINDFULNESS: ANSIEDADE ZERO (MEDITAÇÃO GUIADA)
-            </Link>
-          </Typography>
+          {/* Segundo vídeo */}
+          <Card>
+            <CardContent>
+              <Box sx={{ marginTop: 2 }}>
+                <iframe
+                  width="100%"
+                  height="200"
+                  src="https://www.youtube.com/embed/1fYt92gSJ_U"
+                  title="MINDFULNESS: ANSIEDADE ZERO (MEDITAÇÃO GUIADA)"
+                  style={{ border: 'none' }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </Box>
+              <Typography
+                variant="caption"
+                align="center"
+                sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
+              >
+                <Link
+                  href="https://www.youtube.com/embed/1fYt92gSJ_U"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  underline="always"
+                >
+                  MINDFULNESS: ANSIEDADE ZERO (MEDITAÇÃO GUIADA)
+                </Link>
+              </Typography>
+            </CardContent>
+          </Card>
         </Box>
 
         {/* Footer */}

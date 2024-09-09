@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Button } from '@mui/material';
+import { Container, Typography, Button} from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,6 +18,14 @@ const Dashboard = () => {
 
     const handleTristeClick = () => {
         navigate('/triste'); // Navega para a página "Tiste"
+    };
+
+    const handleEstressadoClick = () => {
+        navigate('/estressado'); // Navega para a página "Estressado(a)"
+    };
+
+    const handleInseguroClick = () => {
+        navigate('/inseguro'); // Navega para a página "Inseguro(a)"
     };
 
     return (
@@ -51,6 +59,7 @@ const Dashboard = () => {
                 variant="contained"
                 fullWidth
                 sx={{ margin: '8px 0', textTransform: 'none', backgroundColor: '#64B5F6', fontSize: '17px' }}
+                onClick={handleEstressadoClick}
             >
                 Estressado(a)
             </Button>
@@ -66,6 +75,7 @@ const Dashboard = () => {
                 variant="contained"
                 fullWidth
                 sx={{ margin: '8px 0', textTransform: 'none', backgroundColor: '#FFD54F', fontSize: '17px' }}
+                onClick={handleInseguroClick}
             >
                 Inseguro(a)
             </Button>

@@ -24,6 +24,8 @@ import Insone from './pages/Insone';
 import Triste from './pages/Triste';
 import RespostasForum from './pages/RespostasForum';
 import Notificacoes from './pages/Notificacoes';
+import Estressado from './pages/Estressado';
+import Inseguro from './pages/Inseguro';
 import './App.css';
 
 
@@ -59,6 +61,8 @@ function App() {
           <Route path="/perguntas/:id" element={<RespostasForum />} />
           <Route path="/notificacoes" element={<Notificacoes />} />
           <Route path="/triste" element={<Triste />} />
+          <Route path="/estressado" element={<Estressado />} />
+          <Route path="/inseguro" element={<Inseguro />} />
 
           {/* Redirecionamento de Rotas Desconhecidas */}
           <Route path="*" element={<AuthRedirect />} />

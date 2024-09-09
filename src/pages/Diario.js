@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, TextField, Button, Typography, MenuItem, Snackbar, Alert, FormControl, Box } from '@mui/material';
+import { Container, TextField, Button, Typography, MenuItem, Snackbar, Alert, FormControl} from '@mui/material';
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import format from 'date-fns/format';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
@@ -170,7 +170,7 @@ const Diario = () => {
 
                 <Snackbar
                     open={openSnackbar}
-                    autoHideDuration={4000}
+                    autoHideDuration={2000}
                     onClose={handleSnackbarClose}
                     anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
                 >
@@ -178,13 +178,6 @@ const Diario = () => {
                         Registro salvo com sucesso!
                     </Alert>
                 </Snackbar>
-
-                {/* Footer */}
-                <Box mt={8} textAlign="center">
-                    <Typography variant="body2" color="textSecondary" sx={{ fontFamily: 'Saturday' }}>
-                        PsiCuida
-                    </Typography>
-                </Box>
             </Container>
         </LocalizationProvider>
     );

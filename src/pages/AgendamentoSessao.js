@@ -414,13 +414,6 @@ const AgendamentoSessao = () => {
           </Button>
         </DialogActions>
       </Dialog>
-
-      {/* Footer */}
-      <Box mt={8} textAlign="center">
-        <Typography variant="body2" color="textSecondary" sx={{fontFamily:'Saturday'}}>
-          PsiCuida
-        </Typography>
-      </Box>
     </Container>
   );
 };

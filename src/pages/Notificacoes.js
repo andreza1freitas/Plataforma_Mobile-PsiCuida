@@ -91,14 +91,14 @@ const Notificacoes = () => {
 
                 <Box width="100%" maxWidth="400px">
                     <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mb: 2, fontWeight: 'bold' }}>
-                        <Typography variant="body1">Agendamento Sessão</Typography>
+                        <Typography variant="body1">Agende sua Sessão</Typography>
                         <Switch
                             checked={!!notificacoes.notificacao1}
                             onChange={() => handleToggle('notificacao1')}
                         />
                     </Box>
                     <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
-                        <Typography variant="body1">Diário</Typography>
+                        <Typography variant="body1">Lembrete Diário</Typography>
                         <Switch
                             checked={!!notificacoes.notificacao2}
                             onChange={() => handleToggle('notificacao2')}

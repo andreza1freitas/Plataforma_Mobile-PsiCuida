@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, IconButton, Link } from '@mui/material';
+import { Container, Typography, Box, IconButton, Link, Card, CardContent } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
@@ -51,11 +51,10 @@ const Insone = () => {
                     Dicas e princípios para dormir bem:
                 </Typography>
 
-                <Box sx={{ display: 'flex', flexDirection: 'column',fontSize: '16px', alignItems: 'flex-start' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', fontSize: '16px', alignItems: 'flex-start' }}>
                     {[
                         "Evite comer muito e ingerir cafeína à noite.",
                         "Se exponha à luz solar durante o dia e 'canse' o corpo. Evite trabalho, redes sociais, eletrônicos e luz forte por pelo menos duas horas antes de dormir.",
-                        "Escreva suas preocupações e tarefas para o dia seguinte.",
                         "Crie uma rotina para dormir, seguindo sempre o mesmo ritual.",
                         "Procure dormir e acordar no mesmo horário, com pouca variação nos dias de folga.",
                         "Alongamentos e um banho quente podem ajudar a relaxar o corpo.",
@@ -63,14 +62,12 @@ const Insone = () => {
                         "Chá de camomila, leite morno com mel, banana, aveia, cereja (ou suco de cereja), amêndoas e nozes são indutores naturais do sono.",
                         "Vá para cama só quando estiver com sono, mesmo que seja tarde (ou seja, não 'force o sono').",
                         "Não navegue no celular nem assista à TV no quarto, mas ler um livro na cama pode fazer parte da sua rotina para dormir.",
-                        "Não fique olhando as horas repetidamente (tape ou esconda o relógio, use só o alarme se for o caso).",
                         "Se acordar durante a noite e não conseguir dormir, saia da cama e só volte quando estiver com sono (mas não entre em redes sociais e jogos eletrônicos nesse período), pois é importante associar o quarto e a cama com sono, e não com estímulos."
                     ].map((dica, index) => (
                         <Typography
                             key={index}
                             variant="body1"
                             align="left"
-                            
                             sx={{ fontSize: '16px', lineHeight: 1.6, marginBottom: '10px', textAlign: 'justify' }}
                         >
                             {index + 1}. {dica}
@@ -88,33 +85,35 @@ const Insone = () => {
                     <strong>Para melhores resultados, ouça com fones de ouvido.</strong>
                 </Typography>
 
-                {/* vídeo do YouTube */}
-                <Box display="flex" flexDirection="column" alignItems="center" mt={4}>
-                    <iframe
-                        width="320"
-                        height="180"
-                        src="https://www.youtube.com/embed/wFJeTeeXicU"
-                        title="MÚSICA PARA SONO PROFUNDO"
-                        style={{ border: 'none' }}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                    ></iframe>
-
-                    <Typography
-                        variant="caption"
-                        align="center"
-                        sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
-                    >
-                        <Link
-                            href="https://www.youtube.com/embed/wFJeTeeXicU"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            underline="always"
-                        >
-                            MÚSICA PARA SONO PROFUNDO E CURA MILAGROSA 432Hz DORMIR RAPIDAMENTE E RELAXAMENTO PROFUNDO
-                        </Link>
-                    </Typography>
-
+                {/* Card com vídeo do YouTube */}
+                <Box display="flex" justifyContent="center" mt={4}>
+                    <Card sx={{ width: '100%', maxWidth: 600 }}>
+                        <CardContent>
+                            <iframe
+                                width="100%"
+                                height="200"
+                                src="https://www.youtube.com/embed/wFJeTeeXicU"
+                                title="MÚSICA PARA SONO PROFUNDO"
+                                style={{ border: 'none' }}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                            <Typography
+                                variant="caption"
+                                align="center"
+                                sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
+                            >
+                                <Link
+                                    href="https://www.youtube.com/embed/wFJeTeeXicU"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    underline="always"
+                                >
+                                    MÚSICA PARA SONO PROFUNDO E CURA MILAGROSA 432Hz DORMIR RAPIDAMENTE E RELAXAMENTO PROFUNDO
+                                </Link>
+                            </Typography>
+                        </CardContent>
+                    </Card>
                 </Box>
 
                 {/* Footer */}

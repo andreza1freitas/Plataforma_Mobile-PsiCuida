@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Typography, Box, IconButton } from '@mui/material';
-import { Link, useNavigate } from 'react-router-dom';
+import { Container, Typography, Box, IconButton, Card, CardContent, Link } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const Triste = () => {
@@ -39,58 +39,59 @@ const Triste = () => {
             {/* Conteúdo principal */}
             <Container maxWidth="md" sx={{ marginTop: '20px' }}>
                 <Typography variant="body1" align="center" paragraph sx={{ fontSize: '17px' }}>
-                    A vida coloca diante de nós muitos obstáculos, muitos desvios, cria, algumas vezes, labirintos que não parecem ter saída.
-                    Em algum momento da sua vida você pode se sentir completamente só e perdido. Mas não desista.
-                    Por mais que nada pareça motivar você e que a própria vida pareça não fazer sentido, não desista de você.
+                    Eu sei que agora pode parecer que a tristeza é pesada demais para suportar, que os dias parecem longos e as noites ainda mais.
+                    Mas saiba que esse sentimento, por mais forte que seja, é passageiro.
+                    Assim como as nuvens que cobrem o céu em um dia nublado, a tristeza também irá passar, e logo o sol voltará a brilhar.
                 </Typography>
                 <Typography variant="body1" align="center" paragraph sx={{ fontSize: '17px' }}>
-                    Quando tudo à sua volta parecer desmoronar, pense que a sua fortaleza está dentro do seu coração.
-                    Não deixe o fogo da vida se apagar. Não mate a sua vida aos poucos, não perca o ânimo, não perca a alegria de viver e de enfrentar os desafios.
-                    É justamente nos momentos mais difíceis que você descobre ser mais forte do que alguma vez foi capaz de imaginar.
+                    Permita-se sentir o que está sentindo. É importante reconhecer sua dor, mas também lembre-se de que você é mais forte do que imagina. 
+                    Dentro de você existe uma força que talvez você ainda não tenha percebido, mas que já te ajudou a superar tantos momentos difíceis.
                 </Typography>
                 <Typography variant="body1" align="center" paragraph sx={{ fontSize: '17px' }}>
-                    Tudo que uma pessoa é capaz de planejar, ela é capaz de realizar. Tenha fé, otimismo e ação.
-                    Sua vida só você a vive, portanto ame mais, acredite mais, e seja mais feliz.
-                    Procure plantar sementes de amor e otimismo na sua vida, e você colherá sempre maravilhosos frutos.
+                Cada dia é uma nova chance de recomeçar, e você merece viver todos eles. Não tenha pressa, vá no seu ritmo, mas acredite que dias melhores estão à sua espera. 
+                Cuide de si mesmo(a), com carinho e paciência. E lembre-se: é ok não estar bem o tempo todo, mas nunca se esqueça que você é capaz de se levantar, sempre.
                 </Typography>
                 <Typography variant="h6" align="center" sx={{ marginTop: '20px', fontWeight: 'bold' }}>
                     Eu acredito em você!
                 </Typography>
 
-                {/* vídeo do YouTube */}
-                <Box display="flex" flexDirection="column" alignItems="center" mt={4}>
-                    <iframe
-                        width="320"
-                        height="180"
-                        src="https://www.youtube.com/embed/78WrEh__qKA"
-                        title="Está Triste? Mensagem de Conforto Fé e Esperança"
-                        style={{ border: 'none' }}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                    ></iframe>
+                {/* Card com vídeo do YouTube */}
+                <Box display="flex" justifyContent="center" mt={4}>
+                    <Card sx={{ width: '100%', maxWidth: 600 }}>
+                        <CardContent>
+                            <iframe
+                                width="100%"
+                                height="200"
+                                src="https://www.youtube.com/embed/78WrEh__qKA"
+                                title="Está Triste? Mensagem de Conforto Fé e Esperança"
+                                style={{ border: 'none' }}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
 
-                    <Typography
-                        variant="caption"
-                        align="center"
-                        sx={{
-                            marginTop: '15px',
-                            fontWeight: 'bold',
-                            display: 'block',
-                            fontSize: '14px'
-                        }}
-                    >
-                        <Link
-                            href="https://www.youtube.com/embed/78WrEh__qKA"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            underline="always"
-                        >
-                            Está triste? Mensagem de Conforto, Fé e Esperança
-                        </Link>
-                    </Typography>
+                            <Typography
+                                variant="caption"
+                                align="center"
+                                sx={{
+                                    marginTop: '15px',
+                                    fontWeight: 'bold',
+                                    display: 'block',
+                                    fontSize: '12px'
+                                }}
+                            >
+                                <Link
+                                    href="https://www.youtube.com/embed/78WrEh__qKA"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    underline="always"
+                                    color="primary"
+                                >
+                                    ESTÁ TRISTE? MENSAGEM DE CONFORTO, FÉ E ESPERANÇA
+                                </Link>
+                            </Typography>
+                        </CardContent>
+                    </Card>
                 </Box>
-
-
 
                 {/* Footer */}
                 <Box mt={8} textAlign="center">
@@ -98,7 +99,7 @@ const Triste = () => {
                         PsiCuida
                     </Typography>
                 </Box>
-            </Container >
+            </Container>
         </>
     );
 };

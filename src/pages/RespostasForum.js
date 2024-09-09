@@ -119,7 +119,7 @@ const RespostasForum = () => {
                             </Box>
                         )}
 
-                        <Typography variant="h6" gutterBottom sx={{ marginBottom: '20px', fontFamily:'Rubica', fontSize:'20px' }}>
+                        <Typography variant="h6" gutterBottom sx={{ marginBottom: '20px', fontFamily: 'Rubica', fontSize: '20px' }}>
                             Respostas
                         </Typography>
 
@@ -133,11 +133,11 @@ const RespostasForum = () => {
                                 wordWrap: 'break-word',
                                 whiteSpace: 'pre-wrap',
                             }}>
-                                <Typography variant="body2" color="textSecondary" gutterBottom>
-                                    <strong>Autor: Anônimo - Publicado em: {formatDate(resposta.data)}</strong>
-                                </Typography>
                                 <Typography variant="body1">
                                     {resposta.conteudo}
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" gutterBottom>
+                                    <strong>Autor: Anônimo - Publicado em: {formatDate(resposta.data)}</strong>
                                 </Typography>
                             </Box>
                         ))}
