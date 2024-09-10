@@ -3,7 +3,7 @@ import { Container, Typography, Box, IconButton, Link, Card, CardContent } from 
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-const Estressado = () => {
+const Desatento = () => {
     const navigate = useNavigate();
 
     const handleBack = () => {
@@ -32,32 +32,30 @@ const Estressado = () => {
                         fontSize: '33px',
                         fontFamily: 'Saturday'
                     }}>
-                    Estressado(a)
+                    Desatento(a)
                 </Typography>
             </div>
 
             <Container maxWidth="md" sx={{ marginTop: '20px' }}>
                 <Typography variant="body1" align="center" paragraph sx={{ fontSize: '17px' }}>
-                    O estresse pode ser esmagador às vezes, mas é importante lembrar que ele não dura para sempre. Tire um momento para respirar e se reconectar com você mesmo(a).
-                    O que está te sobrecarregando agora pode parecer gigante, mas você é capaz de lidar com isso, um passo de cada vez.
-                    Não se pressione tanto para resolver tudo de uma vez.
+                    A distração pode acontecer com qualquer pessoa, especialmente em momentos de pressão ou quando a mente está sobrecarregada.
+                    Mas lembre-se, você tem a capacidade de focar e alcançar tudo o que deseja. Às vezes, tudo o que é preciso é uma pequena pausa para reorganizar os pensamentos e voltar ao caminho com mais clareza.
                 </Typography>
                 <Typography variant="body1" align="center" paragraph sx={{ fontSize: '17px' }}>
-                    Permita-se pausar, relaxar e, se possível, buscar uma atividade que te traga leveza. O estresse faz parte da vida, mas ele também passa, assim como as nuvens que cobrem o céu em um dia tempestuoso.
-                    Cuide de si, seu bem-estar é a prioridade.
+                    Respire fundo, reorganize suas prioridades e volte ao presente. A cada momento que você se concentra, você se aproxima de seus objetivos.
+                    Não se culpe por perder o foco de vez em quando, isso faz parte da jornada. O importante é como você se recupera e avança. Você é capaz de conquistar grandes coisas, um passo de cada vez!
                 </Typography>
 
-                {/* Vídeos do YouTube */}
+                {/* Vídeo do YouTube */}
                 <Box display="flex" flexDirection="column" alignItems="center" mt={4} gap={4}>
-
                     <Card sx={{ width: '100%', maxWidth: 600 }}>
                         <CardContent>
                             <Box sx={{ marginTop: 2 }}>
                                 <iframe
                                     width="100%"
                                     height="200"
-                                    src="https://www.youtube.com/embed/nnMaBBP3rEk"
-                                    title="Vídeo sobre estresse"
+                                    src="https://www.youtube.com/embed/D17roP3AOa4"
+                                    title="Vídeo sobre culpa"
                                     style={{ border: 'none' }}
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
@@ -69,42 +67,12 @@ const Estressado = () => {
                                 sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
                             >
                                 <Link
-                                    href="https://www.youtube.com/watch?v=nnMaBBP3rEk"
+                                    href="https://www.youtube.com/watch?v=D17roP3AOa4"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     underline="always"
                                 >
-                                    LIMPAR RAIVA E DISSOLVER STRESS - Frequência Binaural Alpha 10hz
-                                </Link>
-                            </Typography>
-                        </CardContent>
-                    </Card>
-
-                    <Card sx={{ width: '100%', maxWidth: 600 }}>
-                        <CardContent>
-                            <Box sx={{ marginTop: 2 }}>
-                                <iframe
-                                    width="100%"
-                                    height="200"
-                                    src="https://www.youtube.com/embed/zpQOCJVuF50"
-                                    title="Vídeo sobre estresse"
-                                    style={{ border: 'none' }}
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                ></iframe>
-                            </Box>
-                            <Typography
-                                variant="caption"
-                                align="center"
-                                sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
-                            >
-                                <Link
-                                    href="https://www.youtube.com/watch?v=zpQOCJVuF50"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    underline="always"
-                                >
-                                    COMO ALIVIAR O ESTRESSE DO DIA A DIA
+                                    PARE DE SE SENTIR CULPADO - Poderoso Vídeo Motivacional
                                 </Link>
                             </Typography>
                         </CardContent>
@@ -122,4 +90,4 @@ const Estressado = () => {
     );
 };
 
-export default Estressado;
+export default Desatento;

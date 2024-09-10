@@ -28,6 +28,14 @@ const Dashboard = () => {
         navigate('/inseguro'); // Navega para a página "Inseguro(a)"
     };
 
+    const handleCulpadoClick = () => {
+        navigate('/culpado'); // Navega para a página "Culpado(a)"
+    };
+
+    const handleDesatentoClick = () => {
+        navigate('/desatento'); // Navega para a página "Desatento(a)"
+    };
+
     return (
         <Container
             sx={{
@@ -83,6 +91,7 @@ const Dashboard = () => {
                 variant="contained"
                 fullWidth
                 sx={{ margin: '8px 0', textTransform: 'none', backgroundColor: '#CE93D8', fontSize: '17px' }}
+                onClick={handleCulpadoClick}
             >
                 Culpado(a)
             </Button>
@@ -98,6 +107,7 @@ const Dashboard = () => {
                 variant="contained"
                 fullWidth
                 sx={{ margin: '8px 0', textTransform: 'none', backgroundColor: '#4DB6AC', fontSize: '17px' }}
+                onClick={handleDesatentoClick}
             >
                 Desatento(a)
             </Button>

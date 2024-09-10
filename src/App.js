@@ -26,6 +26,8 @@ import RespostasForum from './pages/RespostasForum';
 import Notificacoes from './pages/Notificacoes';
 import Estressado from './pages/Estressado';
 import Inseguro from './pages/Inseguro';
+import Culpado from './pages/Culpado';
+import Desatento from './pages/Desatento';
 import './App.css';
 
 
@@ -63,6 +65,8 @@ function App() {
           <Route path="/triste" element={<Triste />} />
           <Route path="/estressado" element={<Estressado />} />
           <Route path="/inseguro" element={<Inseguro />} />
+          <Route path="/culpado" element={<Culpado />} />
+          <Route path="/desatento" element={<Desatento />} />
 
           {/* Redirecionamento de Rotas Desconhecidas */}
           <Route path="*" element={<AuthRedirect />} />

@@ -3,7 +3,7 @@ import { Container, Typography, Box, IconButton, Link, Card, CardContent } from 
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-const Estressado = () => {
+const Culpado = () => {
     const navigate = useNavigate();
 
     const handleBack = () => {
@@ -32,32 +32,31 @@ const Estressado = () => {
                         fontSize: '33px',
                         fontFamily: 'Saturday'
                     }}>
-                    Estressado(a)
+                    Culpado(a)
                 </Typography>
             </div>
 
             <Container maxWidth="md" sx={{ marginTop: '20px' }}>
                 <Typography variant="body1" align="center" paragraph sx={{ fontSize: '17px' }}>
-                    O estresse pode ser esmagador às vezes, mas é importante lembrar que ele não dura para sempre. Tire um momento para respirar e se reconectar com você mesmo(a).
-                    O que está te sobrecarregando agora pode parecer gigante, mas você é capaz de lidar com isso, um passo de cada vez.
-                    Não se pressione tanto para resolver tudo de uma vez.
+                    A culpa pode ser uma carga pesada, mas é importante lembrar que errar faz parte do ser humano.
+                    O mais importante é reconhecer o que aconteceu, aprender com isso e seguir em frente. Todos nós cometemos erros, mas esses momentos não definem quem somos.
+                    O que realmente importa é como você se levanta, como você decide mudar e crescer.
                 </Typography>
                 <Typography variant="body1" align="center" paragraph sx={{ fontSize: '17px' }}>
-                    Permita-se pausar, relaxar e, se possível, buscar uma atividade que te traga leveza. O estresse faz parte da vida, mas ele também passa, assim como as nuvens que cobrem o céu em um dia tempestuoso.
-                    Cuide de si, seu bem-estar é a prioridade.
+                    Seja gentil consigo mesmo(a). Perdoar-se é um ato de coragem e amor próprio. Você merece uma nova chance, assim como qualquer pessoa.
+                    Não deixe que o peso da culpa te impeça de ver o quanto você ainda pode conquistar. Hoje é um novo dia, e cada passo que você dá é uma oportunidade para recomeçar.
                 </Typography>
 
-                {/* Vídeos do YouTube */}
+                {/* Vídeo do YouTube */}
                 <Box display="flex" flexDirection="column" alignItems="center" mt={4} gap={4}>
-
                     <Card sx={{ width: '100%', maxWidth: 600 }}>
                         <CardContent>
                             <Box sx={{ marginTop: 2 }}>
                                 <iframe
                                     width="100%"
                                     height="200"
-                                    src="https://www.youtube.com/embed/nnMaBBP3rEk"
-                                    title="Vídeo sobre estresse"
+                                    src="https://www.youtube.com/embed/D17roP3AOa4"
+                                    title="Vídeo sobre culpa"
                                     style={{ border: 'none' }}
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
@@ -69,42 +68,12 @@ const Estressado = () => {
                                 sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
                             >
                                 <Link
-                                    href="https://www.youtube.com/watch?v=nnMaBBP3rEk"
+                                    href="https://www.youtube.com/watch?v=D17roP3AOa4"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     underline="always"
                                 >
-                                    LIMPAR RAIVA E DISSOLVER STRESS - Frequência Binaural Alpha 10hz
-                                </Link>
-                            </Typography>
-                        </CardContent>
-                    </Card>
-
-                    <Card sx={{ width: '100%', maxWidth: 600 }}>
-                        <CardContent>
-                            <Box sx={{ marginTop: 2 }}>
-                                <iframe
-                                    width="100%"
-                                    height="200"
-                                    src="https://www.youtube.com/embed/zpQOCJVuF50"
-                                    title="Vídeo sobre estresse"
-                                    style={{ border: 'none' }}
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                ></iframe>
-                            </Box>
-                            <Typography
-                                variant="caption"
-                                align="center"
-                                sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
-                            >
-                                <Link
-                                    href="https://www.youtube.com/watch?v=zpQOCJVuF50"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    underline="always"
-                                >
-                                    COMO ALIVIAR O ESTRESSE DO DIA A DIA
+                                    PARE DE SE SENTIR CULPADO - Poderoso Vídeo Motivacional
                                 </Link>
                             </Typography>
                         </CardContent>
@@ -122,4 +91,4 @@ const Estressado = () => {
     );
 };
 
-export default Estressado;
+export default Culpado;
