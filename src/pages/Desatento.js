@@ -54,8 +54,8 @@ const Desatento = () => {
                                 <iframe
                                     width="100%"
                                     height="200"
-                                    src="https://www.youtube.com/embed/D17roP3AOa4"
-                                    title="Vídeo sobre culpa"
+                                    src="https://www.youtube.com/embed/nY8_Wt7LuF8"
+                                    title="Vídeo sobre desatenção"
                                     style={{ border: 'none' }}
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
@@ -67,12 +67,12 @@ const Desatento = () => {
                                 sx={{ marginTop: '15px', fontWeight: 'bold', display: 'block' }}
                             >
                                 <Link
-                                    href="https://www.youtube.com/watch?v=D17roP3AOa4"
+                                    href="https://www.youtube.com/watch?v=nY8_Wt7LuF8"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     underline="always"
                                 >
-                                    PARE DE SE SENTIR CULPADO - Poderoso Vídeo Motivacional
+                                    TENHA OBJETIVOS CLAROS | Mantenha a disciplina e o foco no processo | Mente Forte
                                 </Link>
                             </Typography>
                         </CardContent>

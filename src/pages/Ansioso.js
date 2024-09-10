@@ -51,7 +51,7 @@ const Ansioso = () => {
         {/* vídeo do YouTube */}
         <Box display="flex" flexDirection="column" alignItems="center" mt={4} gap={4}>
           {/* Primeiro vídeo */}
-          <Card>
+          <Card sx={{ width: '100%', maxWidth: 600 }}>
             <CardContent>
               <Box sx={{ marginTop: 2 }}>
                 <iframe
@@ -82,7 +82,7 @@ const Ansioso = () => {
           </Card>
 
           {/* Segundo vídeo */}
-          <Card>
+          <Card sx={{ width: '100%', maxWidth: 600 }}>
             <CardContent>
               <Box sx={{ marginTop: 2 }}>
                 <iframe
