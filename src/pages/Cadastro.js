@@ -21,7 +21,7 @@ const Cadastro = () => {
         genero: '',
         estadoCivil: '',
         tratamento: '',
-        senha: ''
+        senha: '',
     });
 
     const [showPassword, setShowPassword] = useState(false);

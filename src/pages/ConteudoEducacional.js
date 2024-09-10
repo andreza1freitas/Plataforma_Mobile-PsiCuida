@@ -53,7 +53,7 @@ const ConteudoEducacional = () => {
                 <Typography variant="body2" color="textSecondary">
                   {artigo.description}
                 </Typography>
-                <Button href={artigo.link} variant="contained" color="primary" sx={{ marginTop: 2 }}>
+                <Button href={artigo.link} variant="contained" sx={{ marginTop: 2, backgroundColor: '#003366' }}>
                   Ler mais
                 </Button>
               </CardContent>

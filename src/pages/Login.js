@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, Container, Typography, IconButton, InputAdornment } from '@mui/material';
+import { Button, TextField, Container, Typography, IconButton, InputAdornment, Snackbar, Alert } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
@@ -10,6 +10,8 @@ const Login = ({ onLogin }) => {
   const apiUrl = process.env.REACT_APP_API_BASE_URL;
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [openSnackbar, setOpenSnackbar] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -40,10 +42,13 @@ const Login = ({ onLogin }) => {
 
         navigate('/dashboard');
       } else {
-        console.error('Login failed');
+        setErrorMessage('Credenciais inválidas');
+        console.log('Credenciais inválidas');
+        setOpenSnackbar(true);
       }
     } catch (error) {
-      console.error('An error occurred:', error);
+      setErrorMessage('Ocorreu um erro durante o login');
+      setOpenSnackbar(true);
     }
   };
 
@@ -59,6 +64,10 @@ const Login = ({ onLogin }) => {
     navigate('/');
   };
 
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
+  };
+
   return (
     <Container component="main"
       sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
@@ -71,7 +80,7 @@ const Login = ({ onLogin }) => {
       </IconButton>
 
       <Typography variant="h3" component="h1" gutterBottom
-        sx={{ color: '#003366', marginBottom: '50px', fontFamily:'Saturday' }}>
+        sx={{ color: '#003366', marginBottom: '50px', fontFamily: 'Saturday' }}>
         PsiCuida
       </Typography>
 
@@ -118,11 +127,22 @@ const Login = ({ onLogin }) => {
           fullWidth
           variant="contained"
           color="primary"
-          sx={{ backgroundColor: '#003366', marginTop: '10px', textTransform: 'none', fontSize: '17px'}}
+          sx={{ backgroundColor: '#003366', marginTop: '10px', textTransform: 'none', fontSize: '17px' }}
         >
           Login
         </Button>
       </form>
+
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      >
+        <Alert onClose={handleCloseSnackbar} severity="error" sx={{ width: '100%' }}>
+          {errorMessage}
+        </Alert>
+      </Snackbar>
     </Container>
   );
 }

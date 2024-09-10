@@ -14,7 +14,7 @@ const Home = () => {
                 justifyContent: 'center',
                 height: '100vh',
                 maxWidth: '100%',
-                backgroundColor: '#003366' // cor azul escuro do projeto
+                backgroundColor: '#003366' 
             }}
 
         >

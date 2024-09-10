@@ -37,11 +37,12 @@ const Configuracao = () => {
 
     const handleConfirmDelete = async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/pacientes/${pacienteId}`, {
-                method: 'DELETE',
+            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/pacientes/desativar/${pacienteId}`, {
+                method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                body: JSON.stringify({ situacao: 'INATIVO' })
             });
     
             if (response.ok) {
