@@ -23,12 +23,6 @@ O aplicativo PsiCuida é uma plataforma acessível de suporte psicológico, volt
 - **Date-fns e Dayjs:** Bibliotecas para manipulação de datas, essenciais para lidar com formatações e cálculos de datas de forma eficiente.
 - **React Input Mask e React Text Mask:** Ferramentas que ajudam na formatação e validação de inputs de formulário.
   
-**Backend (Spring Boot):**
-- **Spring Boot 3.3.2:** Framework que simplifica o desenvolvimento de aplicações Java, fornecendo uma estrutura completa para criar aplicações standalone e de fácil escalabilidade.
-- **Spring Data JPA:** Facilita a interação com o banco de dados, permitindo a manipulação de dados de forma mais intuitiva e com menos boilerplate.
-- **Spring Boot DevTools:** Ferramenta que otimiza o desenvolvimento com recursos como hot reload, que torna o processo de teste e desenvolvimento mais ágil.
-- **PostgreSQL:** Banco de dados relacional usado para persistência de dados.
-- **Lombok:** Biblioteca que simplifica a criação de código Java, gerando automaticamente getters, setters e outros métodos comuns, diminuindo a quantidade de código repetitivo.
 
 
 
