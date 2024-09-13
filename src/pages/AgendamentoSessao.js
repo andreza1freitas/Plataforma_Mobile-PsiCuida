@@ -118,7 +118,7 @@ const AgendamentoSessao = () => {
 
       if (response.ok && response.status === 200) {
         const data = await response.json();
-        const msg = agendamentoId ? 'Agendamento atualizado com sucesso' : 'Agendamento realizado com sucesso';
+        const msg = agendamentoId ? 'Agendamento atualizado com sucesso' : 'Agendamento realizado com sucesso. Aguarde confirmação.';
         setSnackbarMessage(msg);
         setSnackbarOpen(true);
         console.log('Agendamento realizado/atualizado com sucesso', data);
